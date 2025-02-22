@@ -30643,29 +30643,28 @@
                           src="https://imagedelivery.net/xaKlCos5cTg_1RWzIu_h-A/5d061ea5-a8e4-4a30-9af3-5aafc7fa7c00/publicContain"
                           alt="" class="h-[22px] md:h-auto" data-dont-replace=""></span>
                     </span>
-                    <form class="pr-0 md:pr-14" data-landingsite-contact-form="">
+                    
+                    <form id="contactForm" class="pr-0 md:pr-14">
                       <div class="mb-[50px] flex items-start">
-                        <input type="text" name="Name"
-                          class="w-full border-b border-solid border-[rgba(83,83,83,0.3)] p-0 pb-3 text-sm font-normal leading-none text-[rgba(83,83,83,0.6)] shadow-none outline-0 focus:border-[rgba(83,83,83,1)] md:text-base"
-                          placeholder="Your Name*">
+                        <input type="text" id="name" name="Name" placeholder="Your Name*" required>
                       </div>
                       <div class="mb-[50px] flex items-start">
-                        <input type="text" name="Email"
-                          class="w-full border-b border-solid border-[rgba(83,83,83,0.3)] p-0 pb-3 text-sm font-normal leading-none text-[rgba(83,83,83,0.6)] shadow-none outline-0 focus:border-[rgba(83,83,83,1)] md:text-base"
-                          placeholder="Your Email Address*">
+                        <input type="email" id="email" name="Email" placeholder="Your Email Address*" required>
                       </div>
                       <div class="flex items-start">
-                        <textarea type="text" name="Message"
-                          class="h-[60px] w-full resize-none border-b border-solid border-[rgba(83,83,83,0.3)] p-0 pb-3 text-sm font-normal leading-none text-[rgba(83,83,83,0.6)] shadow-none outline-0 focus:border-[rgba(83,83,83,1)] md:text-base"
-                          placeholder="Share your message or question*"></textarea>
+                        <textarea id="message" name="Message" placeholder="Share your message or question*" required></textarea>
                       </div>
                       <div class="mt-8 md:mt-11">
-                        <button type="submit"
-                          class="flex h-[52px] items-center justify-center rounded-full bg-[var(--primary-color)] px-8 text-sm font-medium leading-none text-[var(--light-text-color)] transition-all duration-500 ease-in-out hover:bg-[var(--primary-button-hover-bg-color)] md:h-11 md:text-base lg:h-[52px]">Send
-                          a Message</button>
-                          
+                        <button type="submit">Send a Message</button>
                       </div>
+                      <p id="responseMessage" style="color: green; margin-top: 10px;"></p>
                     </form>
+                    
+
+
+
+
+
                   </div>
                 </div>
                 <div class="" data-landingsite-faq="">
@@ -30980,23 +30979,6 @@
             color: #4A90E2;
           }
           </style>
-          
-          <script>
-          function toggleTheme() {
-            document.body.classList.toggle("light-mode");
-          }
-          </script>
-          
-
-
-
-
-
-
-
-
-
-
 
                  </div>
       </div>
@@ -31008,27 +30990,41 @@
 
   </html>
   <script>
-    document.querySelectorAll('[data-landingsite-faq-question]').forEach(button => {
-      button.addEventListener('click', function () {
-        const answer = this.nextElementSibling;
-        const icon = this.querySelector('i');
-
-        // Toggle visibility of the answer
-        answer.classList.toggle('hidden');
-
-        // Toggle arrow icon
-        if (answer.classList.contains('hidden')) {
-          icon.classList.remove('fa-angle-up');
-          icon.classList.add('fa-angle-down');
+    document.getElementById("contactForm").addEventListener("submit", async function(event) {
+      event.preventDefault(); // Prevent page reload
+    
+      let name = document.getElementById("name").value;
+      let email = document.getElementById("email").value;
+      let message = document.getElementById("message").value;
+    
+      if (!name || !email || !message) {
+        alert("Please fill all fields.");
+        return;
+      }
+    
+      try {
+        let response = await fetch("http://localhost:5000", { // Replace with deployed backend URL
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify({ name, email, message })
+        });
+    
+        let data = await response.json();
+        if (response.ok) {
+          document.getElementById("responseMessage").innerText = data.success;
+          document.getElementById("contactForm").reset(); // Clear form
         } else {
-          icon.classList.remove('fa-angle-down');
-          icon.classList.add('fa-angle-up');
+          document.getElementById("responseMessage").innerText = data.error || "Something went wrong.";
         }
-      });
+      } catch (error) {
+        document.getElementById("responseMessage").innerText = "Failed to send message.";
+        console.error("Error:", error);
+      }
     });
-
-  </script>
-
+    </script>
+    
 
   
 </body>

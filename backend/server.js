@@ -11,7 +11,7 @@ const PORT = 5000;
 
 // Allow only your frontend to make requests
 app.use(cors({
-    origin: "http://127.0.0.1:5500/frontend/index.html", // Change this if your frontend is deployed (e.g., "https://yourwebsite.com")
+    origin: ["https://divyang.vercel.app/"], // Change this if your frontend is deployed (e.g., "https://yourwebsite.com")
     methods: ["POST"],
     allowedHeaders: ["Content-Type"],
 }));

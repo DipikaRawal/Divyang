@@ -1,0 +1,28 @@
+{
+  "name": "divyang-website",
+  "version": "1.0.0",
+  "description": "An accessible web platform aimed at supporting individuals with ADHD,  Dyslexia, Alzheimer’s, and Autism. The platform includes a series of interactive games designed to enhance  concentration, improve cognitive abilities, and address everyday challenges faced by these individuals, fostering  improved focus and problem-solving skills.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "type": "module"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DipikaRawal/Divyang.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DipikaRawal/Divyang/issues"
+  },
+  "homepage": "https://github.com/DipikaRawal/Divyang#readme",
+  "dependencies": {
+    "body-parser": "^1.20.3",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "nodemailer": "^6.10.0"
+  }
+}

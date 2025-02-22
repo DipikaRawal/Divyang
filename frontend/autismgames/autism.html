@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Autism Games</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f8ff;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .header h1 {
+            font-size: 2.5em;
+            color: #2b3d3f;
+        }
+
+        .header p {
+            font-size: 1.2em;
+            color: #777;
+        }
+
+        .games-section {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+
+        .game-card {
+            background-color: #fff;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            flex: 1 1 calc(25% - 20px);
+            margin: 10px;
+            text-align: center;
+            padding: 20px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .game-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .game-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            margin-bottom: 15px;
+            border-radius: 8px;
+        }
+
+        .game-card h2 {
+            font-weight: bold;
+            font-size: 1.5em;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .game-card .options {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 15px;
+        }
+
+        .game-card .options a {
+            display: inline-block;
+            padding: 12px 24px;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 8px;
+            width: 45%;
+            text-align: center;
+            background-color: #ff7f50;
+            /* Coral */
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        .game-card .options a:hover {
+            background-color: #ff4500;
+            /* Darker coral */
+            transform: scale(1.05);
+        }
+
+        .game-card .options a:first-child {
+            margin-right: 10px;
+        }
+
+        .rules {
+            display: none;
+            margin-top: 10px;
+            background-color: #fafafa;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+            text-align: left;
+            color: #555;
+            font-family: 'Poppins', sans-serif;
+            /* Clean and modern font */
+            font-size: 0.85em;
+            /* Slightly smaller font */
+            line-height: 1.4;
+            /* Improve readability */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Stimulating Games For Autism</h1>
+            <p>Inclusive and engaging games designed to be accessible and beneficial for individuals with autism
+                spectrum disorder, promoting focus, communication, and cognitive growth.</p>
+        </div>
+        <div class="games-section">
+            <div class="game-card">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSPub1eQlrnBN9xtpDAV4PdYKGjgxiIW3qiFQ&s"
+                    alt="Tile Tussle">
+                <h2>Tile Tussle</h2>
+                <p style="font-size: 15px; font-family: 'Montserrat', sans-serif;">Improves numerical skills and
+                    strategic thinking.</p>
+                <div class="options">
+                    <a href="./games/tile tussle master/index.html" onclick="startGame('Tile Tussle')">Play</a>
+                    <a href="#" onclick="showRules('Tile Tussle')">Description</a>
+                </div>
+                <div id="Tile Tussle" class="rules">
+                    <p><strong>Rules<br></strong>
+                        A brain-bending battle against scrambled squares where your wits are your weapon!Plan your moves
+                        strategically.
+                        Undo moves if needed.
+                        Take breaks when stuck.
+                        Shuffle the board if necessary.
+                        <br>
+                        Choose Difficulty – Select Easy (3x3), Medium (4x4), or Hard (5x5); the board adjusts
+                        accordingly.
+                        <br>Move Tiles – Click and drag a tile to swap it with the empty space.
+                        <br> Win the Game – Arrange all tiles in the correct order to complete the puzzle.
+                    </p>
+                </div>
+            </div>
+
+            <div class="game-card">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ_oxE45j1WY9PtVeQxpKgjsdXRHAcMoRs7nO8UCXLv10clDZdoSO6MfsNMNYO8UFAaLnc&usqp=CAU"
+                    alt="Color Puzzles">
+                <h2>Colour Puzzles</h2>
+                <p style="font-size: 15px; font-family: 'Montserrat', sans-serif;">Enhances pattern recognition, color
+                    perception, and cognitive flexibility in a fun way.</p>
+                <div class="options">
+                    <a href="./games/color puzzle master/index.html" onclick="startGame('Jigsaw Puzzles')">Play</a>
+                    <a href="#" onclick="showRules('Jigsaw Puzzles')">Description</a>
+                </div>
+                <div id="Jigsaw Puzzles" class="rules">
+                    <p><strong>Rules<br></strong>
+                        It a puzzle-based strategy game that requires a mix of skill and luck.
+
+                        <br> The objective is to change the color of the squares until the entire screen is a single
+                        solid
+                        color.
+
+                        <br> Starting with the square in the upper left corner, you can change the color of the blocks
+                        in
+                        order to match that of the surrounding squares. <br>This is done repeatedly until the entire
+                        screen
+                        is one color. <br>You must do so in under 22 moves to win!
+
+                        <br> The game is controlled by the color buttons at the bottom of the screen.
+                    </p>
+                </div>
+            </div>
+
+
+            <div class="game-card">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTP51gx_mNNf2gPt42wMICTKNk3FUwCBUCPa3tcsqXltn7OK57YqaMB6Gr7VKWBjzJgjrA&usqp=CAU"
+                    alt="Tetris">
+                <h2>Tetris</h2>
+                <p style="font-size: 15px; font-family: 'Montserrat', sans-serif;">Develops spatial reasoning,
+                    problem-solving, and organization skills in a structured manner.</p>
+                <div class="options">
+                    <a href="./games/tetris master/index.html" onclick="startGame('Tetris')">Play</a>
+                    <a href="#" onclick="showRules('Tetris')">Description</a>
+                </div>
+                <div id="Tetris" class="rules">
+                    <p><strong>Rules<br></strong>
+                        The player must strategically position falling blocks to
+                        create complete horizontal lines.<br> When a line is filled, it disappears and score increases,
+                        and the blocks above
+                        shift down. <r></r>The game speeds up as the player clears more lines, increasing the challenge.
+                        <br>The
+                        goal is to clear as many lines as possible before the blocks reach the top of the screen, ending
+                        the game.<br>Press esc to pause the game.
+                    </p>
+                </div>
+            </div>
+
+            <div class="game-card">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQdYgFh5ybnWj60Jjt-u-RwF0eePxdkvDRnZ7p2IpVi2W0q_e7O3yHPwz2yCyPN_NZrY6M&usqp=CAU"
+                    alt="Tilting Maze">
+                <h2>Tilting Maze</h2>
+                <p style="font-size: 15px; font-family: 'Montserrat', sans-serif;">Enhances balance, coordination, and
+                    motor planning, beneficial for sensory integration.</p>
+                <div class="options">
+                    <a href="./games/tilting maze master/" onclick="startGame('Tilting Maze')">Play</a>
+                    <a href="#" onclick="showRules('Tilting Maze')">Description</a>
+                </div>
+                <div id="Tilting Maze" class="rules">
+                    <p><strong>Rules<br></strong>
+                        Guide the ball through a maze using the joystick, merging four colored dots
+                        into one as you navigate the path. <br>Once the dots are merged, guide the ball to the hole in
+                        the
+                        center of the maze to complete the game.<br>The maze features various obstacles that require
+                        careful
+                        movement to avoid.<br>Press H for hard mode and E for easy mode. In hard mode, you need to avoid
+                        black
+                        holes.<br>If a ball falls into the hole, press the spacebar to reset the game.<br>The goal is to
+                        complete the game as quickly and accurately as possible. A steady hand and good spatial
+                        awareness are
+                        essential.</p>
+                </div>
+            </div>
+
+            <div class="game-card">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTder7QW7flSmREk0GkLznVZXwOCp1it90yA1volP1gNN0QU3MaBXVUFGGN2d5mJQQN68A&usqp=CAU"
+                    alt="Starfall">
+                <h2>Starfall</h2>
+                <p style="font-size: 15px; font-family: 'Montserrat', sans-serif;">Enhances visual tracking, reflexes,
+                    and coordination with engaging falling object mechanics.
+                </p>
+                <div class="options">
+                    <a href="./games/star fall master/index.html" onclick="startGame('Starfall')">Play</a>
+                    <a href="#" onclick="showRules('Starfall')">Description</a>
+                </div>
+                <div id="Starfall" class="rules">
+                    <p><strong>Rules<br></strong>
+                        The goal is to catch falling stars while avoiding obstacles. <br>Players must move quickly and
+                        position themselves correctly to collect as many stars as possible before time runs out. <br>The
+                        game enhances reflexes, coordination, and visual tracking.
+                    </p>
+                </div>
+            </div>
+            <div class="game-card">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRieTZGSLsdqGMgL6IrsjMSWQFUP3qNxmHJNJT5AvmaOfrU1ysvRPBZmBX7OQgO32bSf9g&usqp=CAU"
+                    alt="Simon Says">
+                <h2>Simon Says</h2>
+                <p style="font-size: 15px; font-family: 'Montserrat', sans-serif;">IImproves memory, attention, and
+                    ability to follow instructions, essential for daily tasks.</p>
+                <div class="options">
+                    <a href="./games/simon says master/index.html" onclick="startGame('Simon Says')">Play</a>
+                    <a href="#" onclick="showRules('Simon Says')">Description</a>
+                </div>
+                <div id="Simon Says" class="rules">
+                    <p><strong>Rules<br></strong>
+                        A sequence of four colors is displayed, each blinking a certain number of times in a seemingly
+                        random pattern. <br>After the sequence finishes, the player must reproduce the exact blinking
+                        pattern by clicking on the corresponding colors the same number of times they blinked in the
+                        original sequence. <br>The game increases in difficulty as the player progresses, likely by
+                        increasing the length of the sequence, the number of colors, the speed of the blinking, or a
+                        combination of these factors.
+                    </p>
+                </div>
+            </div>
+
+            <div class="game-card">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRbR8TTl7miNZCWFN4voJ2FeK5E3ujiakCoxOI9AqRTHY43FQhaOotiKWMxpy7m5MkQB-c&usqp=CAU"
+                    alt="Scrabble">
+                <h2>Scrabble</h2>
+                <p style="font-size: 15px; font-family: 'Montserrat', sans-serif;">Strengthens vocabulary, spelling, and
+                    communication skills .</p>
+                <div class="options">
+                    <a href="./games/scrabble master/index.html" onclick="startGame('Scrabble')">Play</a>
+                    <a href="#" onclick="showRules('Scrabble')">Description</a>
+                </div>
+                <div id="Scrabble" class="rules">
+                    <p><strong>Rules<br></strong> Strategically place letter tiles on the board to create
+                        high-scoring words while blocking your opponents.
+                        Scrabble is a fantastic way to expand your vocabulary, enhance your spelling, and enjoy some
+                        friendly competition. <br>Words must be valid and connect to existing ones.<br> Connect words
+                        like a crossword to score points!
+
+
+                    </p>
+                </div>
+            </div>
+
+            <div class="game-card">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQz5bWYxwRjdu5lxP5Y6yyTegLoLMan16ECMzOM3-RT1uCwE7cqL-SaIT-LIMEwjFRlpG0&usqp=CAU"
+                    alt="Cross road">
+                <h2>Cross road</h2>
+                <p style="font-size: 15px; font-family: 'Montserrat', sans-serif;"> Develops planning skills, quick
+                    decision-making, and spatial awareness.</p>
+                <div class="options">
+                    <a href="./games/cross road master/index.html" onclick="startGame('Cross road')">Play</a>
+                    <a href="#" onclick="showRules('Cross road')">Description</a>
+                </div>
+                <div id="Cross road" class="rules">
+                    <p><strong>Rules<br></strong>
+                        Guide your character across roads by avoiding traffic and
+                        obstacles. <br>Tap the keys or use arrow keys to move and avoid being hit by cars .<br> Each
+                        level
+                        presents more challenging traffic patterns. <br>The game ends if you’re hit by a vehicle.<br>
+                        The goal
+                        is to travel as far as possible.<br> High scores are based on distance covered.
+
+                    </p>
+                </div>
+            </div>
+
+            <div class="game-card">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQwGn2Y7vd5nizyeEwsFE4IBHOuKaUBRL7fmw&s"
+                    alt="Breakout Room">
+                <h2>Breakout Room</h2>
+                <p style="font-size: 15px; font-family: 'Montserrat', sans-serif;">Challenge
+                    reflexes and focus for sharpening hand-eye coordination, also attention skills.</p>
+                <div class="options">
+                    <a href="./games/breakout room master/index.html" onclick="startGame('Breakout Room')">Play</a>
+                    <a href="#" onclick="showRules('Breakout Room')">Description</a>
+                </div>
+                <div id="Breakout Room" class="rules">
+                    <p><strong>Rules<br></strong>
+                        Use your right and left keys to move the paddle to bounce the ball
+                        up
+                        and break the blocks.<br>If you miss the ball, you score drops to zero and the blocks will
+                        reset<br>
+                    </p>
+                </div>
+            </div>
+
+            <div class="game-card">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT9cYvuy_8CBazRYmu32ofRqU1aqMzEZrghjqwcDPK3K4m-V7s9B8uWu7fAJbBsqH_7kiA&usqp=CAU"
+                    alt="Bullet hell">
+                <h2>Bullet hell</h2>
+                <p style="font-size: 15px; font-family: 'Montserrat', sans-serif;"> Improves reaction time, hand-eye
+                    coordination, and focus by navigating fast-paced challenges.</p>
+                <div class="options">
+                    <a href="./games/bullet hell master/index.html" onclick="startGame('Bullet hell')">Play</a>
+                    <a href="#" onclick="showRules('Bullet hell')">Description</a>
+                </div>
+                <div id="Bullet hell" class="rules">
+                    <p><strong>Rules<br></strong> Here speed, precision, and quick reflexes are your best
+                        allies. <br>Your goal is to survive an onslaught of enemy bullets while taking down as many foes
+                        as
+                        possible to boost your score, starting at 0 with a 1x multiplier. <br>Use the Arrow keys or WASD
+                        to
+                        maneuver through the chaos, and press Z or B to fire at enemies. <br>When the screen becomes
+                        overwhelming, slow down time with X or N to carefully navigate, or unleash a screen-clearing
+                        bomb with C or M to reset the battlefield. <br>If you need a moment to strategize, hit P to
+                        pause
+                        the action. <br>The longer you survive and the more enemies you destroy, the higher your score
+                        will
+                        climb. <br>Can you dodge the relentless bullet storm, outsmart your enemies, and rise to the
+                        top?
+                        <br>The challenge is yours—good luck!
+
+
+                    </p>
+                </div>
+            </div>
+            <div class="game-card">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRf_BMBJBI-638K7ThEd9ZMzwfWY5UqdqvHyA&s"
+                    alt="Word Finder">
+                <h2>Word Finder</h2>
+                <p style="font-size: 15px; font-family: 'Montserrat', sans-serif;">Enhances visual scanning and word recognition.</p>
+                <div class="options">
+                    <a href="./games/wordfinder-master/wordsearch.html" onclick="startGame('Word Finder')">Play</a>
+                    <a href="#" onclick="showRules('Word Finder')">Description</a>
+                </div>
+                <div id="Word Finder" class="rules">
+                    <p><strong>Rules<br></strong>
+                        This exciting game challenges you to uncover hidden words in a grid of letters. Perfect for
+                        sharpening your vocabulary and pattern recognition skills.
+                        Find hidden words in a letter grid by connecting adjacent letters (up, down, sideways, or
+                        diagonally).
+                        Words must be 3+ letters.
+                        No proper nouns or repeats in one word.
+                        Race to find the most words before time runs out!
+                    </p>
+                </div>
+            </div>
+            <div class="game-card">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS_KdkU5r6TxlVUttZZA9hA3szP67g3Lyd0So7rVST9TAbsZoqz-INsKvOW8E7dy0WBnF0&usqp=CAU"
+                    alt="Flappy Bird">
+                <h2>Flappy Bird</h2>
+                <p style="font-size: 15px; font-family: 'Montserrat', sans-serif;"> Boosts motor control, timing, and
+                    perseverance with repetitive but engaging gameplay.</p>
+                <div class="options">
+                    <a href="./games/flappy bird master/index.html" onclick="startGame('Flappy Bird')">Play</a>
+                    <a href="#" onclick="showRules('Flappy Bird')">Description</a>
+                </div>
+                <div id="Flappy Bird" class="rules">
+                    <p><strong>Rules<br></strong> The player controls a bird that continuously falls and must tap to
+                        make it flap and stay in the air. <br>The objective is to navigate through narrow gaps between
+                        pipes
+                        without hitting them. <br>The game requires precise timing, coordination, and patience to
+                        achieve
+                        high scores.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function showRules(gameId) {
+            var rulesDiv = document.getElementById(gameId);
+            rulesDiv.style.display = rulesDiv.style.display === 'block' ? 'none' : 'block';
+        }
+
+
+    </script>
+</body>
+
+</html>

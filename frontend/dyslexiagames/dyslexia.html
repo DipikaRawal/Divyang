@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dyslexia games</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f8ff;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .header h1 {
+            font-size: 2.5em;
+            color: #2b3d3f;
+        }
+
+        .header p {
+            font-size: 1.2em;
+            color: #777;
+        }
+
+        .games-section {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+
+        .game-card {
+            background-color: #fff;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            flex: 1 1 calc(25% - 20px);
+            margin: 10px;
+            text-align: center;
+            padding: 20px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .game-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .game-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            margin-bottom: 15px;
+            border-radius: 8px;
+        }
+
+        .game-card h2 {
+            font-weight: bold;
+            font-size: 1.5em;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .game-card .options {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 15px;
+        }
+
+        .game-card .options a {
+            display: inline-block;
+            padding: 12px 24px;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 8px;
+            width: 45%;
+            text-align: center;
+            background-color: #ff7f50;
+            /* Coral */
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        .game-card .options a:hover {
+            background-color: #ff4500;
+            /* Darker coral */
+            transform: scale(1.05);
+        }
+
+        .game-card .options a:first-child {
+            margin-right: 10px;
+        }
+
+        .rules {
+            display: none;
+            margin-top: 10px;
+            background-color: #fafafa;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+            text-align: left;
+            color: #555;
+            font-family: 'Poppins', sans-serif;
+            /* Clean and modern font */
+            font-size: 0.85em;
+            /* Slightly smaller font */
+            line-height: 1.4;
+            /* Improve readability */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Skill-Building Games for Dyslexia</h1>
+            <p>Engage with puzzles designed to boost cognitive skills and problem-solving abilities, all within
+                an interactive and dynamic environment.</p>
+        </div>
+        <div class="games-section">
+            <div class="game-card">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRf_BMBJBI-638K7ThEd9ZMzwfWY5UqdqvHyA&s"
+                    alt="Word Finder">
+                <h2>Word Finder</h2>
+                <p style="font-size: 15px; font-family: 'Montserrat', sans-serif;">Enhances visual scanning and word
+                    recognition.</p>
+                <div class="options">
+                    <a href="./games/word-finder-master/wordsearch.html" onclick="startGame('word finder')">Play</a>
+                    <a href="#" onclick="showRules('word finder')">Description</a>
+                </div>
+                <div id="word finder" class="rules">
+                    <p><strong>Rules<br></strong>
+
+                        This exciting game challenges you to uncover hidden words in a grid of letters. Perfect for
+                        sharpening your vocabulary and pattern recognition skills.<br>Find hidden words in a letter grid
+                        by
+                        connecting adjacent letters (up, down, sideways, or diagonally).
+                        <br> Words must be 3+ letters.
+                        <br> No proper nouns or repeats in one word.
+                        <br>Race to find the most words before time runs out!
+                    </p>
+                </div>
+            </div>
+            <div class="game-card">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRDkTwSg80-fPb_ispMP_aIFCkfo3EV3yQ3Xg&s"
+                    alt="Tic Tac Toe">
+                <h2>Tic-Tac-Toe</h2>
+                <p style="font-size: 15px; font-family: 'Montserrat', sans-serif;">Develops strategic thinking and
+                    pattern recognition.</p>
+                <div class="options">
+                    <a href="./games/tic-tac-toe-master/index.html" onclick="startGame('memory')">Play</a>
+                    <a href="#" onclick="showRules('memory')">Description</a>
+                </div>
+                <div id="memory" class="rules">
+                    <p><strong>Rules <br></strong>Outsmart your opponent by placing Xs and Os in a 3x3 grid.
+                        While easy to learn,it offers endless opportunities to
+                        hone your strategic thinking and foresight.<br>X goes first, then alternate.
+
+                        Win by lining up 3 marks horizontally, vertically, or diagonally.
+
+                        <br>No winner? It’s a draw!<br> Whether you're playing on paper, a board, or
+                        digitally, this classic game is perfect for quick fun and brain-teasing challenges!"
+                    </p>
+                </div>
+            </div>
+            <div class="game-card">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRESZbOb8U1oVVsQNXyUPbxwk6Nq5vuHmYJIg&s"
+                    alt="Math Mania">
+                <h2>Math Mania</h2>
+                <p style="font-size: 15px; font-family: 'Montserrat', sans-serif;"> Improves processing speed and
+                    automaticity</p>
+                <div class="options">
+                    <a href="./games/multiplication-master/index.html" onclick="startGame('bird')">Play</a>
+                    <a href="#" onclick="showRules('bird')">Description</a>
+                </div>
+                <div id="bird" class="rules">
+                    <p><strong>Rules <br></strong>Get ready to flex your mental muscles in
+                        the electrifying game where numbers collide and calculations become your superpowers! Test your
+                        speed, accuracy, and quick thinking as you race against the clock to solve a flurry of math
+                        problems. <br>Math Challenge: Solve math problems (addition, subtraction, multiplication)
+                        quickly.
+                        <br>Time Limit: Answer before the timer runs out.
+                        <br>Correct Answers: +1 score.
+                        <br>Wrong Answers: -1 Penalty.
+                        <br>Game Over: When time runs out.
+                        <br>Best Score: Your top score is saved.<br>Can you conquer the challenge and become the
+                        ultimate Math Master?
+                    </p>
+                </div>
+            </div>
+            <div class="game-card">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQAmZWbVSCufxvfaRZVb-S8ESmTnbGEoGu3xA&s"
+                    alt="Scrabble">
+                <h2>Scrabble</h2>
+                <p style="font-size: 15px; font-family: 'Montserrat', sans-serif;">Reinforces spelling, vocabulary, and
+                    word recognition.</p>
+                <div class="options">
+                    <a href="./games/scrabble-master/index.html" onclick="startGame('flow')">Play</a>
+                    <a href="#" onclick="showRules('flow')">Description</a>
+                </div>
+                <div id="flow" class="rules">
+                    <p><strong>Rules<br></strong> Strategically place letter tiles on the board to create
+                        high-scoring words while blocking your opponents.
+                        Scrabble is a fantastic way to expand your vocabulary, enhance your spelling, and enjoy some
+                        friendly competition. <br>Words must be valid and connect to existing ones.<br> Connect words
+                        like a crossword to score points!
+
+                        <br> Score big with premium squares (double/triple letters/words)."
+
+                    </p>
+                </div>
+            </div>
+            <div class="game-card">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT4IYkLIpRNtmhHU0dAwK7rYzjHWi3-ictoe1gvuo7z8luLNRCI_l-Z6iEieq0xg3Pdhmg&usqp=CAU"
+                    alt="Anagrams">
+                <h2>Anagrams</h2>
+                <p style="font-size: 15px; font-family: 'Montserrat', sans-serif;">Fun and engaging way to
+                    improve their reading,spelling and memory skills.</p>
+                <div class="options">
+                    <a href="./games//anagram-master/index.html" onclick="startGame('Anagrams')">Play</a>
+                    <a href="#" onclick="showRules('Anagrams')">Description</a>
+                </div>
+                <div id="Anagrams" class="rules">
+                    <p><strong>Rules<br></strong>You’ll be given a set of random letters, and your challenge is to
+                        create as
+                        many words as possible from them—but here’s the twist: the clock is ticking!<br> Race against
+                        time
+                        to brainstorm and form the most words you can before time runs out. <br>How many can you come up
+                        with under pressure?<br> Let’s see if you can beat the clock!
+                    </p>
+                </div>
+            </div>
+            <div class="game-card">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTjA1GlbNcGHbfKLjV3lIt2q_hJj3VbTXkru2LhY2ouu6ic-S3aLcVDcWKi_TvojnBUEbs&usqp=CAU"
+                    alt="hess">
+                <h2>Chess</h2>
+                <p style="font-size: 15px; font-family: 'Montserrat', sans-serif;">Enhances planning and sequential
+                    thinking.</p>
+                <div class="options">
+                    <a href="./games/chess-master/chess.html" onclick="startGame('Chess')">Play</a>
+                    <a href="#" onclick="showRules('Chess')">Description</a>
+                </div>
+                <div id="Chess" class="rules">
+                    <p><strong>Rules<br></strong> Chess is a strategic two-player game played on an 8x8 grid.<br> Each
+                        player starts with 16 pieces: one king, one queen, two rooks, two bishops, two knights, and
+                        eight pawns.<br> The goal is to checkmate the opponent's king, meaning the king is in a position
+                        to
+                        be captured ("in check") and cannot escape. Pieces move in unique ways: pawns move forward but
+                        capture diagonally, knights move in an L-shape, bishops diagonally, rooks horizontally or
+                        vertically, the queen combines rook and bishop moves, and the king moves one square in any
+                        direction. <br>Special moves include castling (king and rook swap for safety), en passant (pawn
+                        capture), and pawn promotion (reaching the opponent's back rank). <br>The game ends in
+                        checkmate,
+                        stalemate (no legal moves), or a draw by agreement, repetition, or the 50-move rule.<br> You can
+                        choose whether you want to plat with AI agent or other friend and your color.
+
+                    </p>
+                </div>
+            </div>
+            <div class="game-card">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTyJBtif2pB7BfjG0gVKqVnB-EEG1MZ9XwslRQWSQEZHWbjm3ofCDbDwc3952F_M3BWUjs&usqp=CAU"
+                    alt="Memory Flip">
+                <h2>Memory Flip</h2>
+                <p style="font-size: 15px; font-family: 'Montserrat', sans-serif;">Improves working memory, visual
+                    recognition, concentration.</p>
+                <div class="options">
+                    <a href="./games/match-flip-master/index.html" onclick="startGame('Memory Flip')">Play</a>
+                    <a href="#" onclick="showRules('Memory Flip')">Description</a>
+                </div>
+                <div id="Memory Flip" class="rules">
+                    <p><strong>Rules<br></strong> Make pairs of similiar blocks by flipping them.
+                        To flip a block you can click on it.
+                        If two blocks you clicked are not similar, they will be flipped back.
+                        Click one of the following mode to start the game:
+                        3 x 4 or 4 x 4 or 4 x 5 or 5 x 6 or 6 x 6
+
+                    </p>
+                </div>
+            </div>
+
+            <div class="game-card">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRALm-esxvl6tK3GKRslyfRziMFBNJQ1Y92J_m5irN8gxbgBjeJrADGA2QlC_iwFuY9eA8&usqp=CAU"
+                    alt="Bullet hell">
+                <h2>Bullet hell</h2>
+                <p style="font-size: 15px; font-family: 'Montserrat', sans-serif;">Improves visual tracking and
+                    attention.</p>
+                <div class="options">
+                    <a href="./games/bullet hell-master/index.html" onclick="startGame('Bullet hell')">Play</a>
+                    <a href="#" onclick="showRules('Bullet hell')">Description</a>
+                </div>
+                <div id="Bullet hell" class="rules">
+                    <p><strong>Rules<br></strong>Here speed, precision, and quick reflexes are your best
+                        allies. <br>Your goal is to survive an onslaught of enemy bullets while taking down as many foes
+                        as
+                        possible to boost your score, starting at 0 with a 1x multiplier. <br>Use the Arrow keys or WASD
+                        to
+                        maneuver through the chaos, and press Z or B to fire at enemies. <br>When the screen becomes
+                        overwhelming, slow down time with X or N to carefully navigate, or unleash a screen-clearing
+                        bomb with C or M to reset the battlefield. <br>If you need a moment to strategize, hit P to
+                        pause
+                        the action. <br>The longer you survive and the more enemies you destroy, the higher your score
+                        will
+                        climb. <br>Can you dodge the relentless bullet storm, outsmart your enemies, and rise to the
+                        top?
+                        <br>The challenge is yours—good luck!
+
+                    </p>
+                </div>
+            </div>
+
+            <div class="game-card">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRnrs71D1SGtI9-FzgCrEQrXrJ0gk2xs_7f4N-0UItV85uGwguJ2-mNAeCY3DVWmVKyhM0&usqp=CAU"
+                    alt="Tower Block">
+                <h2>Tower Block</h2>
+                <p style="font-size: 15px; font-family: 'Montserrat', sans-serif;">Improves fine motor skills and
+                    spatial reasoning.</p>
+                <div class="options">
+                    <a href="./games/tower block-master/index.html" onclick="startGame('Tower Block')">Play</a>
+                    <a href="#" onclick="showRules('Tower Block')">Description</a>
+                </div>
+                <div id="Tower Block" class="rules">
+                    <p><strong>Rules<br></strong> Click (or press the spacebar) to place the block.<br>When the game
+                        begins, your task is to stack incoming blocks on top of each
+                        other to build the tallest tower possible.<br> However, there’s a catch: if you place a block
+                        slightly outside the edge of the one below it, the overhanging part will be cut off, making the
+                        next block shorter. <br>Precision is key—every move counts as you aim to balance speed and
+                        accuracy
+                        to create the highest tower without toppling it.<br> Can you master the art of perfect placement
+                        and
+                        reach new heights? <br>Let the stacking begin!
+
+
+                    </p>
+                </div>
+            </div>
+
+            <div class="game-card">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRJiJzslvvgfhYh7DU7t16KPtPmk8G0DwdzbW16UjzqPvCNNcyMQJgfGYxwFcym9HyBPb0&usqp=CAU"
+                    alt="Falling Word">
+                <h2>Falling Word</h2>
+                <p style="font-size: 15px; font-family: 'Montserrat', sans-serif;">Strengthens word recognition and
+                    spelling and speed.</p>
+                <div class="options">
+                    <a href="./games/falling word-master/index.html" onclick="startGame('Falling Word')">Play</a>
+                    <a href="#" onclick="showRules('Falling Word')">Description</a>
+                </div>
+                <div id="Falling Word" class="rules">
+                    <p><strong>Rules<br></strong>The game tests your typing speed, focus, and reflexes!<br>
+
+                        Words will fall from the top of the screen at increasing speeds.
+
+                        <br> Type the word correctly in the input box to make it disappear.
+
+                        <br>But beware—if the word touches the cyan line at the
+                        bottom, it’s game over!
+
+                        <br> Score increases if you type the correct word before it touches the bottom line.<br>
+                        You have 3 lives. <br> Press spacebar to start playing and ESc to pause.
+
+
+                    </p>
+                </div>
+            </div>
+
+            <div class="game-card">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRaSkNWpXxd4kDZLgs_J4EICGtHOzHiMXGRbMqp_6l_F_xT0SEtqPxjiLIi5q8zYvRA6_8&usqp=CAU"
+                    alt="Tetris">
+                <h2>Tetris</h2>
+                <p style="font-size: 15px; font-family: 'Montserrat', sans-serif;">Enhances spatial reasoning and
+                    visual-motor coordination.</p>
+                <div class="options">
+                    <a href="./games/tetris-master/index.html" onclick="startGame('Tetris')">Play</a>
+                    <a href="#" onclick="showRules('Tetris')">Description</a>
+                </div>
+                <div id="Tetris" class="rules">
+                    <p><strong>Rules<br></strong>The player must strategically  position falling blocks to
+                        create complete horizontal lines.<br> When a line is filled, it disappears and score increases, and the blocks above
+                        shift down. <r></r>The game speeds up as the player clears more lines, increasing the challenge. <br>The
+                        goal is to clear as many lines as possible before the blocks reach the top of the screen, ending
+                        the game.<br>Press esc to pause the game.
+
+                    </p>
+                </div>
+            </div>
+
+            <div class="game-card">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT0LmJQsAIwoTpRb8mqxAwt2BwRlHb9NGLLRSVnTMpSzom78k27m0LxOFfW3oV9wPyEeTU&usqp=CAU"
+                    alt="Sudoko">
+                <h2>Sudoko</h2>
+                <p style="font-size: 15px; font-family: 'Montserrat', sans-serif;">Improves logical thinking and pattern
+                    recognition.</p>
+                <div class="options">
+                    <a href="./games/sudoko-master/index.html" onclick="startGame('Sudoko')">Play</a>
+                    <a href="#" onclick="showRules('Sudoko')">Description</a>
+                </div>
+                <div id="Sudoko" class="rules">
+                    <p><strong>Rules<br></strong> This addictive number game is all about logic, strategy, and a touch
+                        of patience. Fill the grid so that every row, column, and 3x3 box contains the numbers 1 to 9
+                        without repeating.<br>Starting Numbers: Some numbers are already filled in as clues. <br> No
+                        Repeats: Each row, column, and 3x3 box must contain all numbers 1 to 9 without
+                        duplicates.<br>Perfect for sharpening your mind and relaxing your soul.
+
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script>
+        function showRules(gameId) {
+            var rulesDiv = document.getElementById(gameId);
+            rulesDiv.style.display = rulesDiv.style.display === 'block' ? 'none' : 'block';
+        }
+    </script>
+</body>
+
+</html>

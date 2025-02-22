@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alzhimer Games</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f8ff;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .header h1 {
+            font-size: 2.5em;
+            color: #2b3d3f;
+        }
+
+        .header p {
+            font-size: 1.2em;
+            color: #777;
+        }
+
+        .games-section {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+
+        .game-card {
+            background-color: #fff;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            flex: 1 1 calc(25% - 20px);
+            margin: 10px;
+            text-align: center;
+            padding: 20px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .game-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .game-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            margin-bottom: 15px;
+            border-radius: 8px;
+        }
+
+        .game-card h2 {
+            font-weight: bold;
+            font-size: 1.5em;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .game-card .options {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 15px;
+        }
+
+        .game-card .options a {
+            display: inline-block;
+            padding: 12px 24px;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 8px;
+            width: 45%;
+            text-align: center;
+            background-color: #ff7f50;
+            /* Coral */
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        .game-card .options a:hover {
+            background-color: #ff4500;
+            /* Darker coral */
+            transform: scale(1.05);
+        }
+
+        .game-card .options a:first-child {
+            margin-right: 10px;
+        }
+
+        .rules {
+            display: none;
+            margin-top: 10px;
+            background-color: #fafafa;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+            text-align: left;
+            color: #555;
+            font-family: 'Poppins', sans-serif;
+            /* Clean and modern font */
+            font-size: 0.85em;
+            /* Slightly smaller font */
+            line-height: 1.4;
+            /* Improve readability */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Stimulating Games For Alzhimer's</h1>
+            <p>The Healing Journey: Engaging Through Play</p>
+        </div>
+        <div class="games-section">
+            <div class="game-card">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSPub1eQlrnBN9xtpDAV4PdYKGjgxiIW3qiFQ&s"
+                    alt="Tile Tussle">
+                <h2>Tile Tussle</h2>
+                <p style="font-size: 15px; font-family: 'Montserrat', sans-serif;">Improves numerical skills and
+                    strategic thinking.</p>
+                <div class="options">
+                    <a href="./games/sliding-tile-master/index.html" onclick="startGame('Tile Tussle')">Play</a>
+                    <a href="#" onclick="showRules('Tile Tussle')">Description</a>
+                </div>
+                <div id="Tile Tussle" class="rules">
+                    <p><strong>Rules<br></strong>
+                        A brain-bending battle against scrambled squares where your wits are your weapon!Plan your moves
+                        strategically.
+                        Undo moves if needed.
+                        Take breaks when stuck.
+                        Shuffle the board if necessary.
+                        <br>
+                        Choose Difficulty – Select Easy (3x3), Medium (4x4), or Hard (5x5); the board adjusts
+                        accordingly.
+                        <br>Move Tiles – Click and drag a tile to swap it with the empty space.
+                        <br> Win the Game – Arrange all tiles in the correct order to complete the puzzle.
+                    </p>
+                </div>
+            </div>
+
+            <div class="game-card">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPX7MH6C2EX09ncWFrq7r7N58IP5x3TQmJbw&s"
+                    alt="Sudoko">
+                <h2>Sudoko</h2>
+                <p style="font-size: 15px; font-family: 'Montserrat', sans-serif;">Enhances logical reasoning and
+                    numerical skills.</p>
+                <div class="options">
+                    <a href="./games/sudoko-master/index.html" onclick="startGame('Sudoko')">Play</a>
+                    <a href="#" onclick="showRules('Sudoko')">Description</a>
+                </div>
+                <div id="Sudoko" class="rules">
+                    <p><strong>Rules<br></strong>
+                        This addictive number game is all about logic, strategy, and a touch
+                        of patience. Fill the grid so that every row, column, and 3x3 box contains the numbers 1 to 9
+                        without repeating.<br>Starting Numbers: Some numbers are already filled in as clues. <br> No
+                        Repeats: Each row, column, and 3x3 box must contain all numbers 1 to 9 without
+                        duplicates.<br>Perfect for sharpening your mind and relaxing your soul.
+                    </p>
+                </div>
+            </div>
+
+
+            <div class="game-card">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSvJPb5oC8p_y7c_NvN5vYPj5Cj0y3BKrDK7A&s"
+                    alt="Solitaire">
+                <h2>Solitaire</h2>
+                <p style="font-size: 15px; font-family: 'Montserrat', sans-serif;">Promotes planning, strategy,
+                    patience, and focus.</p>
+                <div class="options">
+                    <a href="./games/solitaire-master/index.html" onclick="startGame('Solitaire')">Play</a>
+                    <a href="#" onclick="showRules('Solitaire')">Description</a>
+                </div>
+                <div id="Solitaire" class="rules">
+                    <p><strong>Rules<br></strong>
+                        the perfect game to unwind or sharpen your mind! Arrange
+                        cards in descending order, alternate colors, and build foundation piles to win.<br>Build down
+                        stack cards in descending order (King to Ace) and alternate colors.
+                        <br>
+                        Start with Aces and build up to Kings by suit.
+                        <br>
+                        Flip cards one at a time (or three, depending on the version) to find useful cards.
+                        <br>
+                        Fill an empty pile with a King or a stack starting with a King.
+                        <br>
+                        Complete all four foundation piles to win the game!
+                    </p>
+                </div>
+            </div>
+
+            <div class="game-card">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQk6DW_Ki8hYtNBfvbOdFQVGxmSCRmS1UrV6wOa7uoAz_pMoZj2qIVrMSYbE9i4fhLfKVI&usqp=CAU"
+                    alt="Connect 4">
+                <h2>Connect 4</h2>
+                <p style="font-size: 15px; font-family: 'Montserrat', sans-serif;">Develops pattern recognition and
+                    strategic thinking.</p>
+                <div class="options">
+                    <a href="./games/connect4-master/index.html" onclick="startGame('Connect 4')">Play</a>
+                    <a href="#" onclick="showRules('Connect 4')">Description</a>
+                </div>
+                <div id="Connect 4" class="rules">
+                    <p><strong>Rules<br></strong>
+                        Two players take turns placing colored discs into a vertical grid. The goal is to connect four
+                        of your own discs horizontally, vertically, or diagonally. Players must think strategically to
+                        both create their own lines of four and block their opponent from doing the same.</p>
+                </div>
+            </div>
+
+            <div class="game-card">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSiNNJyplaMa8ctyrSgywHUP1yhyNENC5x2t5alj2rb0t9H8ZTrt2lsfltZMRyc4F1lq-A&usqp=CAU"
+                    alt="Crossword">
+                <h2>Crossword</h2>
+                <p style="font-size: 15px; font-family: 'Montserrat', sans-serif;">Maintains vocabulary, language
+                    skills, and memory recall.
+                </p>
+                <div class="options">
+                    <a href="./games/crossword-master/index.html" onclick="startGame('Crossword')">Play</a>
+                    <a href="#" onclick="showRules('Crossword')">Description</a>
+                </div>
+                <div id="Crossword" class="rules">
+                    <p><strong>Rules<br></strong>
+                        Players are presented with a grid of white squares intersected by black squares.<br>You can
+                        choose your mode normal or hard.<br> The goal is to
+                        fill in the white squares with letters, forming words or phrases, based on clues provided.<br>
+                        Clues
+                        are typically definitions or wordplay.
+                    </p>
+                </div>
+            </div>
+            <div class="game-card">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRieTZGSLsdqGMgL6IrsjMSWQFUP3qNxmHJNJT5AvmaOfrU1ysvRPBZmBX7OQgO32bSf9g&usqp=CAU"
+                    alt="Simon Says">
+                <h2>Simon Says</h2>
+                <p style="font-size: 15px; font-family: 'Montserrat', sans-serif;">Improves visual processing and motor
+                    skills.</p>
+                <div class="options">
+                    <a href="./games/simon says-master/index.html" onclick="startGame('SimonSays1')">Play</a>
+                    <a href="#" onclick="showRules('SimonSays1')">Description</a>
+                </div>
+                <div id="SimonSays1" class="rules">
+                    <p><strong>Rules<br></strong>
+                        A sequence of four colors is displayed, each blinking a certain number of times in a seemingly
+                        random pattern. <br>After the sequence finishes, the player must reproduce the exact blinking
+                        pattern by clicking on the corresponding colors the same number of times they blinked in the
+                        original sequence. <br>The game increases in difficulty as the player progresses, likely by
+                        increasing the length of the sequence, the number of colors, the speed of the blinking, or a
+                        combination of these factors.
+                    </p>
+                </div>
+            </div>
+
+            <div class="game-card">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR62kY_cP_RkPaQvN-klXrLlndCFEJ8sqJbgLeIgKqNLJ1cd0lGV7K-TDd11J-3-a9BQuo&usqp=CAU"
+                    alt="Emoji Catcher">
+                <h2>Emoji Catcher</h2>
+                <p style="font-size: 15px; font-family: 'Montserrat', sans-serif;">Stimulates visual recognition and
+                    potentially motor skills.</p>
+                <div class="options">
+                    <a href="./games/emoji catcher-master/index.html" onclick="startGame('Emoji Catcher')">Play</a>
+                    <a href="#" onclick="showRules('Emoji Catcher')">Description</a>
+                </div>
+                <div id="Emoji Catcher" class="rules">
+                    <p><strong>Rules<br></strong>
+                        Catch falling emojis by clicking as they appear. <br>Earn points for
+                        emojis within a time limit.
+                    </p>
+                </div>
+            </div>
+
+            <div class="game-card">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQz5bWYxwRjdu5lxP5Y6yyTegLoLMan16ECMzOM3-RT1uCwE7cqL-SaIT-LIMEwjFRlpG0&usqp=CAU"
+                    alt="2048">
+                <h2>2048</h2>
+                <p style="font-size: 15px; font-family: 'Montserrat', sans-serif;"> Improves numerical skills and
+                    strategic thinking.</p>
+                <div class="options">
+                    <a href="./games/2048-master/index.html" onclick="startGame('2048')">Play</a>
+                    <a href="#" onclick="showRules('2048')">Description</a>
+                </div>
+                <div id="2048" class="rules">
+                    <p><strong>Rules<br></strong>
+                        Combine tiles of the same number in an attempt to create a tile with the value 2048.
+                        <br>Pressing the arrow keys or swiping across the game board will move all tiles in the
+                        direction of the
+                        key pressed/swipe.<br> After all the tiles are done moving a new tile with the value of 2 or 4
+                        will be
+                        created in a random empty cell.<br>
+                        Two tiles with the same number will merge when they collide to create a single tile with double
+                        the
+                        value. <br>The game is over when there are no valid ways for you to move the tiles.
+
+                    </p>
+                </div>
+            </div>
+
+            <div class="game-card">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQwGn2Y7vd5nizyeEwsFE4IBHOuKaUBRL7fmw&s"
+                    alt="Breakout Room">
+                <h2>Breakout Room</h2>
+                <p style="font-size: 15px; font-family: 'Montserrat', sans-serif;">Challenge
+                    reflexes and focus for sharpening hand-eye coordination, also attention skills.</p>
+                <div class="options">
+                    <a href="./games/breakout room-master/index.html" onclick="startGame('Breakout Room')">Play</a>
+                    <a href="#" onclick="showRules('Breakout Room')">Description</a>
+                </div>
+                <div id="Breakout Room" class="rules">
+                    <p><strong>Rules<br></strong>
+                        Use your right and left keys to move the paddle to bounce the ball
+                        up
+                        and break the blocks.<br>If you miss the ball, you score drops to zero and the blocks will
+                        reset<br>
+                    </p>
+                </div>
+            </div>
+
+            <div class="game-card">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSztg7so6Dv_4_MOTU2lpp7_gRQSLxMxCspsrSP-sTJphF9AlDA6neRP2IGSLB_e4YgJwU&usqp=CAU"
+                    alt="">
+                <h2>Minesweeper</h2>
+                <p style="font-size: 15px; font-family: 'Montserrat', sans-serif;">Exercises logical reasoning and
+                    spatial reasoning.</p>
+                <div class="options">
+                    <a href="./games/minesware-master/index.html" onclick="startGame('Minesweeper')">Play</a>
+                    <a href="#" onclick="showRules('Minesweeper')">Description</a>
+                </div>
+                <div id="Minesweeper" class="rules">
+                    <p><strong>Rules<br></strong> Before starting Minesweeper, you select a difficulty level: Easy (9x9 grid
+                        with 10 mines), Medium (16x16 grid with 40 mines), or Hard (30x30 grid with 160 mines).
+                        <br>Clicking
+                        anywhere on the board starts the game and the timer. <br>Numbers displayed on revealed cells
+                        indicate the number of mines in the adjacent cells. <br>To mark a cell you suspect contains a
+                        mine,
+                        use Shift + Click to place a flag. <br>The goal is to uncover all safe cells (those without
+                        mines).
+                        <br> Clicking on a mine results in a game over. <br>You win by successfully revealing all the
+                        safe cells
+                        without detonating any mines.
+
+
+                    </p>
+                </div>
+            </div>
+            <div class="game-card">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSkfRSwTKOWgu0Oxg83yYxLMk0WCITeeCn0ReIodlTtOoWeyhQhGLUtFbDwuGCDQDUsSuM&usqp=CAU"
+                    alt="Memory Game">
+                <h2>Memory Game</h2>
+                <p style="font-size: 15px; font-family: 'Montserrat', sans-serif;">Directly targets working and visual
+                    memory.</p>
+                <div class="options">
+                    <a href="./games/memory game-master/index.html" onclick="startGame('Memory Game')">Play</a>
+                    <a href="#" onclick="showRules('Memory Game')">Description</a>
+                </div>
+                <div id="Memory Game" class="rules">
+                    <p><strong>Rules<br></strong>
+                        <br>There are random display of cards.
+                        <br>Click on two cards to be selected at a time.
+                        <br> Determine if two selected cards are a match and hide them.
+                        <br> If they match they remain unhidden or else they flip.<br>
+                        game fineshes when you match all the cards.
+                    </p>
+                </div>
+            </div>
+            <div class="game-card">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRAmVxfP9rUtuq3ij2hBr9cVHNwKbeYQ1R7BJXWpi4afsIBqyfFgJ7ek6sx8aen_VM_9YU&usqp=CAU"
+                    alt="Matching Shape">
+                <h2>Matching Shape</h2>
+                <p style="font-size: 15px; font-family: 'Montserrat', sans-serif;"> Improves visual perception, spatial
+                    reasoning, and fine motor skills.</p>
+                <div class="options">
+                    <a href="./games/matching shape-master/index.html" onclick="startGame('Matching Shape')">Play</a>
+                    <a href="#" onclick="showRules('Matching Shape')">Description</a>
+                </div>
+                <div id="Matching Shape" class="rules">
+                    <p><strong>Rules<br></strong> Drag and drop the colored shapes into the matching black shapes on the
+                        grid.<br>
+                        Use the left and right arrow keys to rotate the shapes.<br>For every correctly placed shape,
+                        your score will increase out of 7. The score is displayed in the top right corner.<br> You have
+                        2 minutes to complete the puzzle. The timer is displayed at the top center. When the time runs
+                        out, the correct solution will be shown.<br> There are 2 modes: Begineer and Legend.<br>
+                        Successfully match all colored shapes to the black shapes before time runs out!
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function showRules(gameId) {
+            var rulesDiv = document.getElementById(gameId);
+            rulesDiv.style.display = rulesDiv.style.display === 'block' ? 'none' : 'block';
+        }
+
+
+    </script>
+</body>
+
+</html>

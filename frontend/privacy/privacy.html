@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy & Terms</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+            color: #fff;
+            text-align: center;
+            margin: 0;
+            padding: 20px;
+            transition: background 0.5s ease;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: auto;
+            padding: 20px;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 0 10px rgba(0, 255, 255, 0.2);
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        /* Theme Toggle */
+        .theme-toggle {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: #fff;
+            border: none;
+            padding: 10px;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .theme-toggle:hover {
+            background: #ddd;
+        }
+
+        /* Title Animation */
+        h1 {
+            font-size: 32px;
+            animation: fadeIn 1.5s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Accordion */
+        .accordion-item {
+            margin-top: 10px;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+
+        .accordion-header {
+            width: 100%;
+            padding: 15px;
+            background: rgba(0, 0, 0, 0.3);
+            color: #fff;
+            text-align: left;
+            border: none;
+            cursor: pointer;
+            font-size: 18px;
+            transition: background 0.3s;
+        }
+
+        .accordion-header:hover {
+            background: rgba(0, 255, 255, 0.3);
+        }
+
+        .accordion-content {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 0 15px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease-out;
+            text-align: left;
+        }
+
+        .accordion-content p, .accordion-content ul {
+            color: #fff;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .container {
+                padding: 15px;
+            }
+            .accordion-header {
+                font-size: 16px;
+                padding: 10px;
+            }
+        }
+
+        /* Light Mode */
+        .light-mode {
+            background: #f4f4f4;
+            color: #333;
+        }
+        
+        .light-mode .container {
+            background: rgba(0, 0, 0, 0.1);
+        }
+
+        .light-mode .accordion-header {
+            background: rgba(0, 0, 0, 0.2);
+        }
+
+        .light-mode .accordion-header:hover {
+            background: rgba(0, 0, 0, 0.4);
+        }
+    </style>
+</head>
+<body>
+    <button class="theme-toggle">🌙</button>
+
+    <div class="container">
+        <h1>Privacy Policy & Terms of Service</h1>
+        <p class="updated-date">Last updated: <span id="date"></span></p>
+
+        <div class="accordion">
+            <div class="accordion-item">
+                <button class="accordion-header">1. Introduction</button>
+                <div class="accordion-content">
+                    <p>Welcome to <strong>Divyang</strong>. We respect your privacy and aim to protect your personal data.</p>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <button class="accordion-header">2. Information We Collect</button>
+                <div class="accordion-content">
+                    <p>We collect user data, including email, name, and browsing behavior, to enhance our services.</p>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <button class="accordion-header">3. How We Use Your Information</button>
+                <div class="accordion-content">
+                    <ul>
+                        <li>Providing and personalizing services</li>
+                        <li>Marketing and promotional purposes</li>
+                        <li>Legal compliance and fraud prevention</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <button class="accordion-header">4. User Rights & Responsibilities</button>
+                <div class="accordion-content">
+                    <p>You have the right to request access, modification, or deletion of your data. Please email <strong>xtz@gamil.com</strong>.</p>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <button class="accordion-header">5. Terms of Service</button>
+                <div class="accordion-content">
+                    <p>By accessing our website, you agree to comply with our terms:</p>
+                    <ul>
+                        <li>Use the platform responsibly</li>
+                        <li>Do not engage in fraudulent activities</li>
+                        <li>Respect copyrights and trademarks</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <button class="accordion-header">6. Contact Us</button>
+                <div class="accordion-content">
+                    <p>For any queries, email us at <strong>xyz@gmail.com</strong>.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Auto-fill date
+        document.getElementById('date').textContent = new Date().toLocaleDateString();
+
+        // Accordion Functionality
+        document.querySelectorAll('.accordion-header').forEach(button => {
+            button.addEventListener('click', () => {
+                const content = button.nextElementSibling;
+                button.classList.toggle('active');
+
+                if (content.style.maxHeight) {
+                    content.style.maxHeight = null;
+                } else {
+                    content.style.maxHeight = content.scrollHeight + "px";
+                }
+            });
+        });
+
+        // Dark/Light Mode Toggle
+        const toggleButton = document.querySelector('.theme-toggle');
+        toggleButton.addEventListener('click', () => {
+            document.body.classList.toggle('light-mode');
+            if (document.body.classList.contains('light-mode')) {
+                toggleButton.textContent = '☀️';
+            } else {
+                toggleButton.textContent = '🌙';
+            }
+        });
+    </script>
+</body>
+</html>

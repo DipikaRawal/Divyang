@@ -1,0 +1,67 @@
+body {
+    margin: 0;
+    font-family: sans-serif;
+    background: linear-gradient(to bottom, #f0f8ff, #d6e4ff);
+  }
+  
+  #game-container {
+    width: 600px;
+    margin: 50px auto;
+    text-align: center;
+  }
+  
+  h1 {
+    font-size: 3em;
+    margin-bottom: 20px;
+  }
+  
+  #scoreboard {
+    margin-bottom: 20px;
+  }
+  
+  #game-area {
+    height: 300px;
+    border: 1px solid #ddd;
+    margin: 0 auto;
+    position: relative;
+    background-image: url("path/to/your/starry-background.png"); /* Add a starry background image */
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+  }
+  
+  .star {
+    position: absolute;
+    top: 0;
+    left: random(100%);
+    font-size: 2em;
+    color: gold;
+    animation: fall 3s linear infinite;
+    cursor: pointer;
+  }
+  
+  @keyframes fall {
+    0% { top: 0px; }
+    100% { top: 100%; }
+  }
+  
+  #button-container {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+  }
+  
+  #start-button, #stop-button {
+    padding: 10px 20px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  #instructions {
+    margin-top: 20px;
+    font-style: italic;
+  }
+  

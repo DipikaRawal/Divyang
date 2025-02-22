@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beginner level</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+            background-color: #f0f0f0;
+        }
+
+        #instruction-popup, #won-popup {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 10;
+        }
+
+        #popup-content, #won-popup-content {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: left;
+            width: 400px;
+            max-width: 80%;
+        }
+
+        #popup-content h2, #won-popup-content h2 {
+            text-align: center;
+        }
+
+        #popup-content ul {
+            padding-left: 20px;
+        }
+
+        #start-button, #restart-button {
+            display: block;
+            margin: 20px auto 0;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border: none;
+            background-color: #4CAF50;
+            color: white;
+            border-radius: 5px;
+        }
+
+        #timer {
+            position: absolute;
+            top: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        #score {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 24px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div id="instruction-popup">
+        <div id="popup-content">
+            <h2>Instructions</h2>
+            <p>Objective: Drag and drop the colored shapes into the matching black shapes on the grid.</p>
+            <p><strong>Controls:</strong></p>
+            <ul>
+                <li>Drag the colored shapes with your mouse to move them.</li>
+                <li>Use the left and right arrow keys to rotate the shapes.</li>
+            </ul>
+            <p><strong>Scoring:</strong> For every correctly placed shape, your score will increase out of 7. The score is displayed in the top right corner.</p>
+            <p><strong>Timer:</strong> You have 2 minutes to complete the puzzle. The timer is displayed at the top center. When the time runs out, the correct solution will be shown.</p>
+            <p><strong>Winning:</strong> Successfully match all colored shapes to the black shapes before time runs out!</p>
+            <button id="start-button">START NOW</button>
+        </div>
+    </div>
+
+    <div id="won-popup" style="display:none;">
+        <div id="won-popup-content">
+            <h2>Congratulations!</h2>
+            <p>You won the game by correctly matching all shapes before time ran out!</p>
+            <button id="restart-button">Restart</button>
+        </div>
+    </div>
+
+    <div id="timer">2:00</div>
+    <div id="score">Score: 0/7</div>
+
+    <script>
+        let shapes = [];
+        let targetShapes = [];
+        let selectedShape = null;
+        let offsetX, offsetY;
+        let unit = 70;
+        let score = 0;
+        let timer;
+        let timeLeft = 120;
+        let gameOver = false;
+
+        function setup() {
+            createCanvas(windowWidth, windowHeight);
+            let center = { x: width / 2, y: height / 2 };
+
+            targetShapes = randomizePositions(center, unit);
+
+            
+            shapes = [
+                { x: center.x - unit * 4, y: center.y - unit * 2, type: 'triangle', size: unit * 2, angle: targetShapes[0].angle, color: color(34, 139, 34) },
+                { x: center.x - unit * 4, y: center.y + unit * 2, type: 'triangle', size: unit * 2, angle: targetShapes[1].angle, color: color(220, 20, 60) },
+                { x: center.x - unit * 4, y: center.y, type: 'triangle', size: unit * Math.sqrt(2), angle: targetShapes[2].angle, color: color(0, 0, 139) },
+                { x: center.x + unit * 4, y: center.y - unit, type: 'triangle', size: unit * Math.sqrt(2), angle: targetShapes[3].angle, color: color(148, 0, 211) },
+                { x: center.x + unit * 4, y: center.y + unit, type: 'triangle', size: unit, angle: targetShapes[4].angle, color: color(220, 20, 60) },
+                { x: center.x + unit * 4, y: center.y, type: 'square', size: unit, angle: targetShapes[5].angle, color: color(255, 215, 0) },
+                { x: center.x, y: center.y + unit * 4, type: 'triangle', size: unit, angle: targetShapes[6].angle, color: color(0, 0, 205) }
+            ];
+        }
+
+        function draw() {
+            background(240);
+
+            let center = { x: width / 2, y: height / 2 };
+            stroke(0);  
+            noFill();   
+
+            for (let shape of targetShapes) {
+                drawShape(shape);
+            }
+
+            for (let shape of shapes) {
+                drawShape(shape);
+            }
+
+            document.getElementById('timer').innerText = formatTime(timeLeft);
+            document.getElementById('score').innerText = `Score: ${score}/7`;  
+        }
+
+        function drawShape(shape) {
+            push();
+            translate(shape.x, shape.y);
+            rotate(radians(shape.angle));
+            fill(shape.color);
+            noStroke();
+            if (shape.type === 'triangle') {
+                triangle(0, -shape.size / 2, -shape.size / 2, shape.size / 2, shape.size / 2, shape.size / 2);
+            } else if (shape.type === 'square') {
+                rectMode(CENTER);
+                square(0, 0, shape.size);
+            }
+            pop();
+        }
+
+        function mousePressed() {
+            for (let i = shapes.length - 1; i >= 0; i--) {
+                let shape = shapes[i];
+                if (!shape.locked && dist(mouseX, mouseY, shape.x, shape.y) < shape.size) {
+                    selectedShape = shape;
+                    offsetX = mouseX - shape.x;
+                    offsetY = mouseY - shape.y;
+                    shapes.splice(i, 1);
+                    shapes.push(shape);
+                    break;
+                }
+            }
+        }
+
+        function mouseDragged() {
+            if (selectedShape) {
+                selectedShape.x = mouseX - offsetX;
+                selectedShape.y = mouseY - offsetY;
+            }
+        }
+
+        function mouseReleased() {
+            if (selectedShape) {
+                checkPlacement(selectedShape);
+            }
+            selectedShape = null;
+        }
+
+        function keyPressed() {
+            if (selectedShape && !selectedShape.locked) {
+                if (keyCode === LEFT_ARROW) {
+                    selectedShape.angle -= 15;
+                } else if (keyCode === RIGHT_ARROW) {
+                    selectedShape.angle += 15;
+                }
+                checkPlacement(selectedShape);
+            }
+        }
+
+        function checkPlacement(shape) {
+            for (let target of targetShapes) {
+                if (
+                    abs(shape.x - target.x) < 10 &&
+                    abs(shape.y - target.y) < 10 &&
+                    abs(shape.angle - target.angle) < 10 &&
+                    shape.type === target.type &&
+                    shape.size === target.size
+                ) {
+                    shape.x = target.x;
+                    shape.y = target.y;
+                    shape.angle = target.angle;
+                    shape.locked = true;
+                    score++;  
+                    if (score === 7) {
+                        showWonPopup();
+                        noLoop();
+                    }
+                    break;
+                }
+            }
+        }
+
+        function startTimer() {
+            timer = setInterval(() => {
+                timeLeft--;
+                if (timeLeft <= 0) {
+                    clearInterval(timer);
+                    showSolution();
+                    gameOver = true;
+                }
+            }, 1000);
+        }
+
+        function formatTime(seconds) {
+            let minutes = Math.floor(seconds / 60);
+            let secs = seconds % 60;
+            return `${minutes}:${secs < 10 ? '0' : ''}${secs}`;
+        }
+
+        function showSolution() {
+            shapes.forEach(shape => {
+                let target = targetShapes.find(t => t.type === shape.type && t.size === shape.size);
+                if (target) {
+                    shape.color = target.color;
+                    shape.x = target.x;
+                    shape.y = target.y;
+                    shape.angle = target.angle;
+                    shape.locked = true;
+                }
+            });
+        }
+
+        function showWonPopup() {
+            document.getElementById('won-popup').style.display = 'flex';
+        }
+
+        // ivde aan shapes inte orientation maattendath
+        function randomizePositions(center, unit) {
+            let positions = [];
+            let directions = [
+                { dx: unit, dy: 0 },   // Right
+                { dx: -unit, dy: 0 },  // Left
+                { dx: 0, dy: unit },   // Down
+                { dx: 0, dy: -unit }   // Up
+            ];
+
+            let shapesInfo = [
+                { type: 'triangle', size: unit * 2, angle: random([0, 45, 90, 135, 180, 225, 270]) },
+                { type: 'triangle', size: unit * 2, angle: random([0, 45, 90, 135, 180, 225, 270]) },
+                { type: 'triangle', size: unit * Math.sqrt(2), angle: random([0, 45, 90, 135, 180, 225, 270]) },
+                { type: 'triangle', size: unit * Math.sqrt(2), angle: random([0, 45, 90, 135, 180, 225, 270]) },
+                { type: 'triangle', size: unit, angle: random([0, 45, 90, 135, 180, 225, 270]) },
+                { type: 'square', size: unit, angle: random([0, 45, 90, 135, 180, 225, 270]) },
+                { type: 'triangle', size: unit, angle: random([0, 45, 90, 135, 180, 225, 270]) }
+            ];
+
+            positions.push({
+                x: center.x,
+                y: center.y,
+                ...shapesInfo[0],
+                color: 'black'
+            });
+
+            for (let i = 1; i < shapesInfo.length; i++) {
+                let placed = false;
+                while (!placed) {
+                    let randomIndex = Math.floor(Math.random() * positions.length);
+                    let baseShape = positions[randomIndex];
+                    let randomDirection = random(directions);
+                    let newX = baseShape.x + randomDirection.dx;
+                    let newY = baseShape.y + randomDirection.dy;
+
+                    let overlap = positions.some(p => dist(p.x, p.y, newX, newY) < unit);
+                    if (!overlap) {
+                        positions.push({
+                            x: newX,
+                            y: newY,
+                            ...shapesInfo[i],
+                            color: 'black'
+                        });
+                        placed = true;
+                    }
+                }
+            }
+
+            return positions;
+        }
+
+        document.getElementById('start-button').addEventListener('click', function () {
+            document.getElementById('instruction-popup').style.display = 'none';
+            loop();
+            startTimer();
+        });
+
+        document.getElementById('restart-button').addEventListener('click', function () {
+            window.location.reload();
+        });
+    </script>
+</body>
+</html>

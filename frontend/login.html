@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Login/Signin </title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: #eaf4e8; /* Light green background */
+            margin: 0;
+            font-family: Arial, sans-serif;
+            
+        }
+
+        .container {
+            display: flex;
+            max-width: 1200px;
+            width: 80%;
+            align-items: center;
+            gap: 30px;
+            margin: 0 auto; /* Equal margins on both sides */
+        }
+
+        .image-container {
+            flex: 1.5;
+            display: flex;
+            justify-content: center;
+        }
+
+        .image-container img {
+            width: 100%;
+            height: auto;          
+        }
+
+        .form-container {
+            flex: 1;
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            text-align: left;
+        }
+
+        /* Toggle button container */
+        .toggle-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .toggle-container button {
+            padding: 10px 18px;
+            border: none;
+            background: none;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            color: black;
+        }
+
+        .toggle-container .active {
+            color: white;
+            background: #3b9b3b;
+            border-radius: 20px;
+            padding: 10px 20px;
+        }
+
+        h2 {
+            font-size: 26px;
+            font-weight: bolder;
+        }
+
+        p {
+            font-size: 14px;
+            color: gray;
+        }
+
+        form {
+            text-align: left;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            border-radius: 20px;
+            border: none;
+            background: #3b9b3b;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 15px;
+        }
+
+        label {
+            font-family: 'Arial', sans-serif;
+            font-size: 14px;
+            font-weight: bold;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input {
+            width: 93%;
+            padding: 12px 12px;
+            border-radius: 8px;
+            border: 1px solid #ddd;
+            margin-top: 5px;
+            font-size: 16px;
+            font-family: 'Georgia', serif; /* Different font for placeholders */
+        }
+
+        input::placeholder {
+            font-family: 'Courier New', monospace;
+            font-size: 14px;
+            color: #999;
+            padding: 12px 12px;
+        }
+
+        .input-group {
+            margin-bottom: 20px; /* Space between input fields */
+        }
+        /* Remove bold from Email/Username labels */
+        .input-group label {
+            font-weight: normal;
+        }
+        /* Remember me styling */
+        .remember-me {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            font-size: 15px;
+            margin-top: 10px;
+            flex-wrap: wrap; /* Prevents elements from breaking */
+        }
+
+        .remember-me label {
+            display: flex;
+            align-items: left;
+            gap: 5px;
+            font-weight: normal;
+            font-size: 15px;
+            white-space: nowrap; /* Prevents wrapping */
+        }
+        
+        .remember-me input[type="checkbox"] {
+        vertical-align: middle; /* Aligns the checkbox properly */
+        margin-top: 3px; /* Adjust if necessary */
+}
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .image-container {
+                margin-bottom: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="image-container">
+            <img src="https://imagedelivery.net/xaKlCos5cTg_1RWzIu_h-A/b339f333-6cc4-4348-d5a9-85c2ad259f00/publicContain"
+                alt="Inclusive User Interface Design">
+        </div>
+
+        <div class="form-container">
+            <h2>Welcome to Divyang</h2>
+            <p>Join our community designed for neurodiverse individuals</p>
+
+            <!-- Toggle Switch for Sign In / Sign Up -->
+            <div class="toggle-container">
+                <button id="signInBtn" class="active" onclick="toggleForm('signIn')">Sign In</button>
+                <button id="signUpBtn" onclick="toggleForm('signUp')">Sign Up</button>
+            </div>
+
+            <!-- Sign In Form -->
+            <form id="signInForm">
+                <div class="input-group">
+                    <label>Email or Username</label>
+                    <input type="text" placeholder="Enter your email or username">
+                </div>
+
+                <div class="input-group">
+                    <label>Password</label>
+                    <input type="password" placeholder="Enter your password">
+                </div>
+
+                <div class="remember-me">
+                    <label><input type="checkbox"> Remember me</label>
+                    <a href="#">Forgot Password?</a>
+                </div>
+
+                <button type="submit">Sign In</button>
+            </form>
+
+            <!-- Sign Up Form (Initially Hidden) -->
+            <form id="signUpForm" style="display: none;">
+                <div class="input-group">
+                    <label>Full Name</label>
+                    <input type="text" placeholder="Enter your full name">
+                </div>
+
+                <div class="input-group">
+                    <label>Email</label>
+                    <input type="email" placeholder="Enter your email">
+                </div>
+
+                <div class="input-group">
+                    <label>Password</label>
+                    <input type="password" placeholder="Create a password">
+                </div>
+
+                <button type="submit">Sign Up</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        function toggleForm(type) {
+            const signInForm = document.getElementById("signInForm");
+            const signUpForm = document.getElementById("signUpForm");
+            const signInBtn = document.getElementById("signInBtn");
+            const signUpBtn = document.getElementById("signUpBtn");
+
+            if (type === "signIn") {
+                signInForm.style.display = "block";
+                signUpForm.style.display = "none";
+                signInBtn.classList.add("active");
+                signUpBtn.classList.remove("active");
+            } else {
+                signInForm.style.display = "none";
+                signUpForm.style.display = "block";
+                signInBtn.classList.remove("active");
+                signUpBtn.classList.add("active");
+            }
+        }
+    </script>
+
+</body>
+
+</html>

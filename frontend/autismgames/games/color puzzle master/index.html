@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Michael Kolesidis" />
+    <meta
+      name="description"
+      content="Pixelated is an addictive game of strategy and color!"
+    />
+    <meta
+      name="keywords"
+      content="pixelated ,pixelated-game ,game ,casual-game ,puzzle ,puzzle-game ,color-game ,mobile-game ,javascript-game ,online-game ,blackberry-game ,blackberry ,pixel-game, wiphala, flood-it, floodit"
+    />
+    <link rel="icon" href="assets/favicon.ico" type="image/x-icon" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/assets/apple-touch-icon.png"
+    />
+    <link rel="manifest" href="manifest.webmanifest" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Pixelated</title>
+    <script src="texts.js" defer></script>
+    <script src="pixelated.min.js" defer></script>
+  </head>
+  <body>
+    <header>
+      <h1 id="title">Pixelated</h1>
+    </header>
+    <main>
+      <div id="top-bar">
+        <div id="status"></div>
+        <div id="button-container">
+          <button id="help-button">?</button>
+          <button id="new-button"></button>
+        </div>
+      </div>
+      <div id="board"></div>
+      <div id="controls"></div>
+      <div id="winning-streak"></div>
+      <div id="help-container" class="hidden">
+        <div id="help-content">
+          <h2 id="help-title"></h2>
+          <p id="help-description"></p>
+          <p id="help-objective"></p>
+          <p id="help-instructions"></p>
+          <p id="help-controls"></p>
+          <button id="back-button"></button>
+          <div id="copyright"></div>
+        </div>
+      </div>
+    </main>
+    <script>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker
+            .register('/sw.js')
+            .then((registration) => {
+              console.log(
+                'Service Worker registered with scope:',
+                registration.scope
+              );
+            })
+            .catch((error) => {
+              console.log('Service Worker registration failed:', error);
+            });
+        });
+      }
+    </script>
+  </body>
+</html>

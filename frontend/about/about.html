@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Divyang</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #2980b9, #6dd5fa, #ffffff);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            animation: gradientShift 10s infinite alternate ease-in-out;
+        }
+
+        @keyframes gradientShift {
+            0% { background: linear-gradient(135deg, #2980b9, #6dd5fa, #ffffff); }
+            100% { background: linear-gradient(135deg, #6dd5fa, #ffffff, #2980b9); }
+        }
+
+        .container {
+            max-width: 900px;
+            padding: 40px;
+            background: white;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            border-radius: 15px;
+            transform: perspective(1000px) rotateX(0deg);
+            transition: transform 0.5s ease-in-out, box-shadow 0.3s ease-in-out;
+            animation: fadeIn 1.2s ease-in-out;
+        }
+
+        .container:hover {
+            transform: perspective(1000px) rotateX(5deg) translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+        }
+
+        @keyframes fadeIn {
+            0% { opacity: 0; transform: translateY(20px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+
+        h1 {
+            color: #2c3e50;
+            font-size: 2.8rem;
+            margin-bottom: 20px;
+            background: linear-gradient(45deg, #2980b9, #6dd5fa);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+
+        h2 {
+            color: #2c3e50;
+            font-size: 1.8rem;
+            margin-top: 30px;
+        }
+
+        p {
+            font-size: 18px;
+            line-height: 1.6;
+            color: #444;
+            margin-bottom: 15px;
+            animation: fadeIn 1.8s ease-in-out;
+        }
+
+        .highlight {
+            color: #ffffff;
+            font-weight: bold;
+            padding: 6px 12px;
+            background: #2980b9;
+            border-radius: 8px;
+            display: inline-block;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .highlight:hover {
+            transform: scale(1.1);
+            background: #1a5276;
+        }
+
+        ul {
+            text-align: left;
+            max-width: 700px;
+            margin: 0 auto;
+            padding: 0;
+            list-style: none;
+            font-size: 18px;
+        }
+
+        ul li {
+            padding: 10px;
+            background: rgba(41, 128, 185, 0.1);
+            border-radius: 8px;
+            margin: 5px 0;
+            transition: background 0.3s;
+        }
+
+        ul li:hover {
+            background: rgba(41, 128, 185, 0.3);
+        }
+
+        footer {
+            margin-top: auto;
+            width: 100%;
+            padding: 15px;
+            background: rgba(0, 0, 0, 0.8);
+            color: white;
+            font-size: 14px;
+            text-align: center;
+            animation: fadeIn 2s ease-in-out;
+            position: absolute;
+            bottom: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>About Divyang</h1>
+        <p>
+            Our hackathon project, Divyang, is a web-based platform designed to support individuals with 
+            <b>ADHD, Dyslexia, Alzheimer’s, and Autism</b> through interactive and engaging games. 
+            By providing cognitive training in an enjoyable way, Divyang empowers neurodiverse individuals to 
+            enhance their memory, focus, and learning abilities.
+        </p>
+
+        <h2>🌟 Features & Benefits</h2>
+        <ul>
+            <li>🎮 <b>Game-Based Learning</b> - Scientifically designed games enhance cognitive skills.</li>
+            <li>🧠 <b>Personalized Challenges</b> - Adaptive difficulty based on progress.</li>
+            <li>🌎 <b>User-Friendly Interface</b> - Distraction-free and accessible for all.</li>
+            <li>🎯 <b>Skill Development</b> - Improves memory, focus, and logical reasoning.</li>
+        </ul>
+
+        <h2>💡 Who Can Benefit?</h2>
+        <ul>
+            <li>🧠 <b>Children & Adults with ADHD</b> - Helps improve attention span and impulse control.</li>
+            <li>📖 <b>Individuals with Dyslexia</b> - Assists in word recognition and pattern learning.</li>
+            <li>🤖 <b>Autistic Individuals</b> - Supports communication, emotional recognition, and logic.</li>
+            <li>🧓 <b>Individuals with Alzheimer's</b> - Enhances memory recall, cognitive function, and mental agility.</li>
+        </ul>
+
+        <h2>🌍 Our Vision</h2>
+        <p>
+            We aim to create a **safe, engaging, and inclusive** digital space for neurodiverse individuals 
+            to **develop cognitive skills** while having fun.
+        </p>
+
+        <h2>✨ Why "Divyang"?</h2>
+        <p>
+            The word Divyang means "divinely abled" in Sanskrit, signifying our belief that 
+            **strengths should be celebrated, not limitations**.
+        </p>
+    </div>
+    
+   
+</body>
+</html>

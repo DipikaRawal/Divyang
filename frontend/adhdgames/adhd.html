@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ADHD Games</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f8ff;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .header h1 {
+            font-size: 2.5em;
+            color: #2b3d3f;
+        }
+
+        .header p {
+            font-size: 1.2em;
+            color: #777;
+        }
+
+        .games-section {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+
+        .game-card {
+            background-color: #fff;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            flex: 1 1 calc(25% - 20px);
+            margin: 10px;
+            text-align: center;
+            padding: 20px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .game-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .game-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            margin-bottom: 15px;
+            border-radius: 8px;
+        }
+
+        .game-card h2 {
+            font-weight: bold;
+            font-size: 1.5em;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .game-card .options {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 15px;
+        }
+
+        .game-card .options a {
+            display: inline-block;
+            padding: 12px 24px;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 8px;
+            width: 45%;
+            text-align: center;
+            background-color: #ff7f50;
+            /* Coral */
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        .game-card .options a:hover {
+            background-color: #ff4500;
+            /* Darker coral */
+            transform: scale(1.05);
+        }
+
+        .game-card .options a:first-child {
+            margin-right: 10px;
+        }
+
+        .rules {
+            display: none;
+            margin-top: 10px;
+            background-color: #fafafa;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+            text-align: left;
+            color: #555;
+            font-family: 'Poppins', sans-serif;
+            /* Clean and modern font */
+            font-size: 0.85em;
+            /* Slightly smaller font */
+            line-height: 1.4;
+            /* Improve readability */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>ADHD Focus Games</h1>
+            <p>Engaging games designed to enhance focus, memory, and cognitive skills for individuals with ADHD</p>
+        </div>
+        <div class="games-section">
+            <div class="game-card">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSOHG3ZFWyIhcNFHIMthGQiAHYY7YTfFtV0CxDuElMbKBa2pbKB9OC3ZoL8jwfvt2LY8OI&usqp=CAU"
+                    alt="Speed Typing">
+                <h2>Speed Typing</h2>
+                <p style="font-size: 15px; font-family: 'Montserrat', sans-serif;">Improves focus, processing speed,
+                    hand-eye coordination.</p>
+                <div class="options">
+                    <a href="./games/speedtyping-master/index.html" onclick="startGame('Speed Typing')">Play</a>
+                    <a href="#" onclick="showRules('Speed Typing')">Description</a>
+                </div>
+                <div id="Speed Typing" class="rules">
+                    <p><strong>Rules<br></strong>
+                        Type the given word as quickly and accurately as possible.
+                        <br>Words appear on screen, and you must type them exactly.
+                        <br>Each word has a time limit (e.g., 10 seconds).
+                        <br>Points for accuracy.No penalty for mistakes.
+                        <br>3 game modes:Easy, medium and Hard.<br> The game ends when the timer runs out or all
+                        challenges are completed.<br> Final score is displayed.
+                    </p>
+                </div>
+            </div>
+
+            <div class="game-card">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQwGn2Y7vd5nizyeEwsFE4IBHOuKaUBRL7fmw&s"
+                    alt="BreakOut Room">
+                <h2>BreakOut Room</h2>
+                <p style="font-size: 15px; font-family: 'Montserrat', sans-serif;">Challenge
+                    reflexes and focus for sharpening hand-eye coordination, also attention skills.</p>
+                <div class="options">
+                    <a href="./games/breakout-master/index.html" onclick="startGame('BreakOut Room')">Play</a>
+                    <a href="#" onclick="showRules('BreakOut Room')">Description</a>
+                </div>
+                <div id="BreakOut Room" class="rules">
+                    <p><strong>Rules<br></strong>
+                        Use your right and left keys to move the paddle to bounce the ball
+                        up
+                        and break the blocks.<br>If you miss the ball, you score drops to zero and the blocks will
+                        reset<br>
+                    </p>
+                </div>
+            </div>
+
+
+            <div class="game-card">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS_KdkU5r6TxlVUttZZA9hA3szP67g3Lyd0So7rVST9TAbsZoqz-INsKvOW8E7dy0WBnF0&usqp=CAU"
+                    alt="Flappy Bird">
+                <h2>Flappy Bird</h2>
+                <p style="font-size: 15px; font-family: 'Montserrat', sans-serif;">Improves focus, processing speed,
+                    hand-eye coordination.</p>
+                <div class="options">
+                    <a href="./games/flappy-bird-master/index.html" onclick="startGame('Flappy Bird')">Play</a>
+                    <a href="#" onclick="showRules('Flappy Bird')">Description</a>
+                </div>
+                <div id="Flappy Bird" class="rules">
+                    <p><strong>Rules<br></strong>
+                        The player controls a bird that continuously falls and must tap to make it flap and stay in the
+                        air.<br> The objective is to navigate through narrow gaps between pipes without hitting them. <br>The
+                        game requires precise timing, coordination, and patience to achieve high scores.</p>
+                </div>
+            </div>
+
+            <div class="game-card">
+                <img src="https://dl.memuplay.com/new_market/img/com.playvalve.connect.dots.icon.2023-12-18-21-11-44.png"
+                    alt="Color Paths">
+                <h2>Color Paths</h2>
+                <p style="font-size: 15px; font-family: 'Montserrat', sans-serif;">Enhances attention span, reaction
+                    time,
+                    hand-eye coordination.</p>
+                <div class="options">
+                    <a href="./games/ColorPaths-master/index.html" onclick="startGame('Color Paths')">Play</a>
+                    <a href="#" onclick="showRules('Color Paths')">Description</a>
+                </div>
+                <div id="Color Paths" class="rules">
+                    <p><strong>Rules<br></strong>
+                        Tap/ Press the spacebar to make the bird fly and navigate through
+                        pipes without hitting
+                        them. <br>Each successful pass through pipes earns points. The game becomes more challenging as
+                        the
+                        bird’s speed increases.<br> Stay alert to avoid obstacles at all costs.<br> The game ends when
+                        you crash
+                        into an obstacle. <br>Try to beat your previous high score.
+                    </p>
+                </div>
+            </div>
+
+            <div class="game-card">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSbtzZfEtXdqM4eE-b_d2SS61pBUTagSHgK9G65-3nHJnDTHSxXAL8RJXNM82HhxAMi_2s&usqp=CAU"
+                    alt="Ping Pong">
+                <h2>Ping Pong</h2>
+                <p style="font-size: 15px; font-family: 'Montserrat', sans-serif;">Sharpens reflexes, hand-eye
+                    coordination, focus.
+                </p>
+                <div class="options">
+                    <a href="./games/pingpong-master/index.html" onclick="startGame('Ping Pong')">Play</a>
+                    <a href="#" onclick="showRules('Ping Pong')">Description</a>
+                </div>
+                <div id="Ping Pong" class="rules">
+                    <p><strong>Rules<br></strong>
+                        Use the paddle (↑ and ↓) to bounce the ball back and forth. <br>Your
+                        goal is to
+                        prevent the ball from falling off your side while trying to get it past your opponent's paddle
+                        to score points. <br>The game can be played with one AI opponent.<br> The game has no
+                        time limit or a point goal, and the objective is to keep the ball in play.<br> React quickly and
+                        focus on defending your side. The faster your reactions, the higher your score will be.
+                    </p>
+                </div>
+            </div>
+            <div class="game-card">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRb8UW5wBx5E5ZfGgy-hz7YZjU6H5mm_5mS4R8GejUB3dBYc5bA0loOhHcz_7dC1KinMSg&usqp=CAU"
+                    alt="Tilting Maze">
+                <h2>Tilting Maze</h2>
+                <p style="font-size: 15px; font-family: 'Montserrat', sans-serif;">Improves fine motor skills, spatial
+                    reasoning, concentration.</p>
+                <div class="options">
+                    <a href="./games/tilting-maze-master/index.html" onclick="startGame('Tilting Maze')">Play</a>
+                    <a href="#" onclick="showRules('ilting Maze')">Description</a>
+                </div>
+                <div id="Tilting Maze" class="rules">
+                    <p><strong>Rules<br></strong>
+                        Guide the ball through a maze using the joystick, merging four colored dots
+                        into one as you navigate the path. <br>Once the dots are merged, guide the ball to the hole in
+                        the
+                        center of the maze to complete the game.<br>The maze features various obstacles that require
+                        careful
+                        movement to avoid.<br>Press H for hard mode and E for easy mode. In hard mode, you need to avoid
+                        black
+                        holes.<br>If a ball falls into the hole, press the spacebar to reset the game.<br>The goal is to
+                        complete the game as quickly and accurately as possible. A steady hand and good spatial
+                        awareness are
+                        essential.
+                    </p>
+                </div>
+            </div>
+
+            <div class="game-card">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTHgIngmRSA2o73WxobWDthBNjn_M9ELOwZYwnCElA6c1cRewdHhHjIFD2kvqkOFyNYSic&usqp=CAU"
+                    alt="Whake A Mole">
+                <h2>Whake A Mole</h2>
+                <p style="font-size: 15px; font-family: 'Montserrat', sans-serif;">Boosts reaction time, hand-eye
+                    coordination.</p>
+                <div class="options">
+                    <a href="./games/whakeamole-master/index.html" onclick="startGame('Whake A Mole')">Play</a>
+                    <a href="#" onclick="showRules('Whake A Mole')">Description</a>
+                </div>
+                <div id="Whake A Mole" class="rules">
+                    <p><strong>Rules<br></strong>
+                        Moles randomly pop up from holes, and you need to hit(click) them with a
+                        mallet
+                        before they disappear.<br> Each successful hit earns points. You have a limited amount of time
+                        to hit as
+                        many moles as possible.<br> Avoid hitting any other objects or missing moles. <br>The game
+                        speeds up as
+                        you
+                        progress. <br>The highest score is earned by quick reflexes.
+                    </p>
+                </div>
+            </div>
+
+            <div class="game-card">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQz5bWYxwRjdu5lxP5Y6yyTegLoLMan16ECMzOM3-RT1uCwE7cqL-SaIT-LIMEwjFRlpG0&usqp=CAU"
+                    alt="Crossy Road">
+                <h2>Crossy Road</h2>
+                <p style="font-size: 15px; font-family: 'Montserrat', sans-serif;">Challenge
+                    reflexes and focus for sharpening hand-eye coordination, also attention skills.</p>
+                <div class="options">
+                    <a href="./games/crossyroad-master/index.html" onclick="startGame('Crossy Road')">Play</a>
+                    <a href="#" onclick="showRules('Crossy Road')">Description</a>
+                </div>
+                <div id="Crossy Road" class="rules">
+                    <p><strong>Rules<br></strong>
+                        Guide your character across roads by avoiding traffic and
+                        obstacles. <br>Tap the keys or use arrow keys to move and avoid being hit by cars .<br> Each
+                        level
+                        presents more challenging traffic patterns. <br>The game ends if you’re hit by a vehicle.<br>
+                        The goal
+                        is to travel as far as possible.<br> High scores are based on distance covered.
+                    </p>
+                </div>
+            </div>
+
+            <div class="game-card">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRJTiUyoapojB2xKJKOAznU7i4qzEkxgxCY_Xm5o4r3NcDOIXm9Uhz_4DIdRPHNhM3ryWc&usqp=CAU"
+                    alt="Snake and Ladder">
+                <h2>Snake and Ladder</h2>
+                <p style="font-size: 15px; font-family: 'Montserrat', sans-serif;">Helps with number recognition,
+                    turn-taking,
+                    strategic thinking, patience.</p>
+                <div class="options">
+                    <a href="./games/snake-ladder-master/snakeladder.html"
+                        onclick="startGame('Snake and Ladder')">Play</a>
+                    <a href="#" onclick="showRules('Snake and Ladder')">Description</a>
+                </div>
+                <div id="Snake and Ladder" class="rules">
+                    <p><strong>Rules<br></strong>
+                        Choose the number of players and the color you want. <br>Roll a dice and move along the board,
+                        landing on numbered squares. <br>If you
+                        land on a snake, you slide backward; if you land on a ladder, you climb upward. <br>The first
+                        player to
+                        reach the final square wins. <br>Take turns rolling the dice and strategizing your moves.
+                        <br>It’s a simple yet
+                        fun game that depends on luck and strategy. <br>Keep track of your progress and stay patient.
+                    </p>
+                </div>
+            </div>
+
+            <div class="game-card">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRaSkNWpXxd4kDZLgs_J4EICGtHOzHiMXGRbMqp_6l_F_xT0SEtqPxjiLIi5q8zYvRA6_8&usqp=CAU"
+                    alt="Memory Card">
+                <h2>Memory Card</h2>
+                <p style="font-size: 15px; font-family: 'Montserrat', sans-serif;">Improves working memory, visual
+                    recognition, concentration.</p>
+                <div class="options">
+                    <a href="./games/memory-master/memory.html" onclick="startGame('Memory Card')">Play</a>
+                    <a href="#" onclick="showRules('Memory Card')">Description</a>
+                </div>
+                <div id="Memory Card" class="rules">
+                    <p><strong>Rules<br></strong> Flip over two cards at a time to try and
+                        match pairs.<br> The goal is to remember the positions of the cards to make successful
+                        matches.<br> Each
+                        correct match scores points. <br>The game ends when all pairs have been matched.
+                        <br>The fewer moves you take, the higher your score.
+
+                    </p>
+                </div>
+            </div>
+            <div class="game-card">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR4sWi_P2DA164lIvPGXEFuK6oH6hpHEqjMt-_B395d-w8aEwrfVgj8XyU5uv1Ih6F7-8w&usqp=CAU"
+                    alt="Insect Catcher">
+                <h2>Insect Catcher</h2>
+                <p style="font-size: 15px; font-family: 'Montserrat', sans-serif;">Enhances reaction time, hand-eye
+                    coordination, visual tracking.</p>
+                <div class="options">
+                    <a href="./games/insect-catcher-master/index.html" onclick="startGame('Insect Catcher')">Play</a>
+                    <a href="#" onclick="showRules('Insect Catcher')">Description</a>
+                </div>
+                <div id="Insect Catcher" class="rules">
+                    <p><strong>Rules<br></strong>Select your Favourite Insect. <br>Insects fly around the screen, and
+                        your
+                        task is to catch them by tapping on
+                        them. <br>Each insect caught earns points.<br> The game becomes more difficult as insects move
+                        faster.
+                        <br> Avoid missing any insects to maximize your score.<br>
+                        Keep playing to improve your reaction time
+                    </p>
+                </div>
+            </div>
+            <div class="game-card">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS0D7XAIVuEpWqClcW1zf45V6Px2_xP8SWGTMN6P6Pn-5UoIWQDzrY3cw2ikv83YPB_rC8&usqp=CAU"
+                    alt="Archery">
+                <h2>Archery</h2>
+                <p style="font-size: 15px; font-family: 'Montserrat', sans-serif;"> improves working memory, visual
+                    recognition, and concentration</p>
+                <div class="options">
+                    <a href="./games/archery-master/index.html" onclick="startGame('Archery')">Play</a>
+                    <a href="#" onclick="showRules('Archery')">Description</a>
+                </div>
+                <div id="Archery" class="rules">
+                    <p><strong>Rules<br></strong> The player controls a virtual bow and arrow, aiming to hit a target
+                        with
+                        precision.<br> The gameplay is simple—click or tap to stretch the bowstring, adjust the aim, and
+                        release to shoot the arrow.<br> Accuracy is key,
+                        as hitting the center (bullseye) scores the most points, while outer rings give fewer points.
+                        The goal is to test the player’s focus, timing, and hand-eye
+                        coordination.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function showRules(gameId) {
+            var rulesDiv = document.getElementById(gameId);
+            rulesDiv.style.display = rulesDiv.style.display === 'block' ? 'none' : 'block';
+        }
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Word Challenge</title>
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css"
+      rel="stylesheet">
+    <link href="word.css" rel="stylesheet">
+    <head>
+  <link rel="icon" type="image/x-icon" href="scrabble_2d/small/letter_w.png" />
+</head>
+</head>
+<body>
+    <h1>Word Challenge</h1>
+    <div class="container" id="given">
+    <p>
+        <img class="tile" src="./scrabble_2d/small/letter_.png">
+        <img class="tile" src="./scrabble_2d/small/letter_.png">
+        <img class="tile" src="./scrabble_2d/small/letter_.png">
+        <img class="tile" src="./scrabble_2d/small/letter_.png">
+        <img class="tile" src="./scrabble_2d/small/letter_.png">
+        <img class="tile" src="./scrabble_2d/small/letter_.png">
+        <img class="tile" src="./scrabble_2d/small/letter_.png">
+    </p>
+    </div>
+    
+    <div class="container" id="played">
+        <button id="start" type="button" class="btn btn-warning">START</button>
+    <p>
+        <img class="played">
+        <img class="played">
+        <img class="played">
+        <img class="played">
+        <img class="played">
+        <img class="played">
+        <img class="played">
+    </p>
+    </div>
+    
+    <div class="container" id="scoreDiv">
+    <div class="text-center">
+    <div class="scoreClass">
+    <p>
+        <p>Score: <span id="score">0</span></p>
+        <p>High score: <span id="highScore"></span></p>
+    </p>
+    </div>
+    </div>
+    </div>
+    
+    <div class="container" id="errorDiv">
+    <div class="text-center">
+    <div class="errorClass">
+        <p id="error">type as many words as you can in</p>
+    </div>
+    </div>
+    </div>
+        
+    <div class="container" id="timer"></div>
+    <audio data-audio="tick" src="tick.mp3"></audio>
+    <audio data-audio="end" src="end.wav"></audio>
+    <audio data-audio="correct" src="correct.wav"></audio>
+    <audio data-audio="incorrect" src="incorrect.wav"></audio>
+    <audio data-audio="repeat" src="repeat.wav"></audio>
+    <audio data-audio="extra" src="extra.wav"></audio>
+    
+    <div id="answer">
+    <div class="container">
+    <div class="col-md-12">
+    <div class="thumbnail">
+        <p id="answerHeader">You got</p>
+        <p class="answer" id="youGot"></p>
+    </div>
+    </div>
+    </div>
+    
+    <div class="container">
+    <div class="col-md-12">
+    <div class="thumbnail">
+        <p id="answerHeader">You missed</p>
+        <p class="answer" id="youMissed"></p>
+    </div>
+    </div>
+    </div>
+    </div>
+    
+    
+    
+    
+    <script src="word.js"></script>
+</body>
+</html>

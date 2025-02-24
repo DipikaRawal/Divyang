@@ -30358,7 +30358,7 @@
                           
                            <!-- Explore more games link -->
                           <a href="./alzhimergames/alzhimer.html"
-                            class="text-blue-500 hover:text-blue-700 text-base font-semibold mt-4 inline-block"><br>Explore
+                            class="text-blue-500 hover:text-blue-700 text-base font-semibold mt-4 inline-block">Explore
                             more games</a>
                         </div>
                       </div>
@@ -30391,14 +30391,39 @@
                   </div>
                 </div>
                 <div class="mt-8 block md:hidden">
-                  <ul class="flex items-center justify-center gap-3" data-landingsite-carousel-controls-index="">
-                    <li
-                      class="h-5 w-5 rounded-full cursor-pointer transition-colors bg-[var(--primary-button-bg-color)]">
-                    </li>
-                    <li class="h-5 w-5 rounded-full cursor-pointer transition-colors bg-[#C9CECD]"></li>
-                    <li class="h-5 w-5 rounded-full cursor-pointer transition-colors bg-[#C9CECD]"></li>
-                  </ul>
+                  <div class="flex justify-center space-x-2">
+                    <span class="carousel-dot h-3 w-3 bg-gray-400 rounded-full active-dot"></span>
+                    <span class="carousel-dot h-3 w-3 bg-gray-400 rounded-full"></span>
+                    <span class="carousel-dot h-3 w-3 bg-gray-400 rounded-full"></span>
+                    <span class="carousel-dot h-3 w-3 bg-gray-400 rounded-full"></span>
+                  </div>
+                  
                 </div>
+                <script>
+                  document.addEventListener("DOMContentLoaded", function () {
+  const carousel = document.querySelector("[data-landingsite-carousel]");
+  const slides = document.querySelectorAll("[data-landingsite-carousel-item]");
+  const dots = document.querySelectorAll(".carousel-dot"); // Make sure dots have this class
+  
+  let currentIndex = 0;
+
+  function updateCarousel(index) {
+    const offset = -index * 100; // Assuming full-width slides
+    carousel.style.transform = `translateX(${offset}%)`;
+    dots.forEach(dot => dot.classList.remove("active-dot")); 
+    dots[index].classList.add("active-dot"); 
+  }
+
+  dots.forEach((dot, index) => {
+    dot.addEventListener("click", () => {
+      currentIndex = index;
+      updateCarousel(currentIndex);
+    });
+  });
+});
+
+                </script>
+                
               </div>
             </section>
             <section class="relative mb-5 pt-8 md:pb-[50px] md:pt-[50px] lg:pb-[100px] code-section" id="s6gk9c">
@@ -30464,9 +30489,6 @@
                   <span class="block">Divyang's Pioneering Solutions for Neurodiverse Individuals</span>
                 </h4>
               </div>
-
-
-
               <div class="mx-auto mt-9 grid w-full max-w-[976px] grid-cols-1 gap-5 md:mt-14 md:grid-cols-2 md:gap-10">
                 <div
                   class="flex items-start gap-4 rounded-[20px] border border-solid border-[var(--dark-border-color)] bg-[#FFFFFF] p-8 shadow-[0_4_99px_0px_rgba(0,0,0,0.08)] md:p-6 lg:pb-9 lg:pl-8 lg:pr-12 lg:pt-8">
@@ -30876,7 +30898,7 @@
             <div class="footer-container">
               <!-- About Section -->
               <div class="footer-section about">
-                <a href="/" class="footer-logo">Divyang</a>
+                <a  class="footer-logo">Divyang</a>
                 <p>We deliver quality services with innovation. Stay connected for updates.</p>
               </div>
           
@@ -30910,16 +30932,19 @@
             color: white;
             overflow: hidden;
             transition: background 0.5s ease-in-out;
+            display: flex;
+  flex-direction: column;
+  align-items: center;
           }
           
           /* Footer Container */
           .footer-container {
             display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-            align-items: center;
-            max-width: 1000px;
-            margin: auto;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  max-width: 1000px;
+  margin: auto;
           }
           
           /* Sections */
@@ -30989,10 +31014,12 @@
           
           /* Copyright */
           .footer-bottom {
-            border-top: 1px solid rgba(255, 255, 255, 0.3);
-            margin-top: 15px;
-            padding-top: 5px;
-            font-size: 12px;
+            width: 100%; /* Ensures it spans the full footer width */
+  text-align: center; /* Centers the text */
+  border-top: 1px solid rgba(255, 255, 255, 0.3);
+  margin-top: 15px;
+  padding-top: 10px;
+  font-size: 12px;
           }
           
           /* Light Mode */

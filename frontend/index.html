@@ -30356,9 +30356,9 @@
                             improve concentration, and bring joy. It’s not about perfection—it’s about enjoying the
                             moment and staying engaged. Keep playing, and keep growing!</p>
                           
-                          <br>  <!-- Explore more games link -->
+                           <!-- Explore more games link -->
                           <a href="./alzhimergames/alzhimer.html"
-                            class="text-blue-500 hover:text-blue-700 text-base font-semibold mt-4 inline-block">Explore
+                            class="text-blue-500 hover:text-blue-700 text-base font-semibold mt-4 inline-block"><br>Explore
                             more games</a>
                         </div>
                       </div>
@@ -30763,7 +30763,7 @@
                       <div class="mt-5 hidden" data-landingsite-faq-answer="">
                         <p
                           class="text-left text-sm font-normal leading-[22px] text-[var(--dark-text-color)] md:text-base md:leading-6 lg:leading-[30px]">
-                          Divyang is designed with accessibility in mind, featuring dark mode, intuitive navigation, and
+                          Divyang is designed with accessibility in mind, intuitive navigation, and
                           no ads, allowing users to focus on gameplay without distractions.</p>
                       </div>
                     </div>
@@ -30782,8 +30782,14 @@
                       <div class="mt-5 hidden" data-landingsite-faq-answer="">
                         <p
                           class="text-left text-sm font-normal leading-[22px] text-[var(--dark-text-color)] md:text-base md:leading-6 lg:leading-[30px]">
-                          We are planning to introduce AI capabilities for personalized game suggestions, multiplayer
-                          functions for social interaction, and a mobile app to increase accessibility.</p>
+                          Voice Navigation & Commands – Hands-free interaction for accessibility.
+                         <br> Haptic Feedback & Sensory Adjustments – Customizable tactile and visual settings.
+                         <br> Game Progress Tracking & Reports – Personalized dashboards with cognitive insights.
+                         <br> Offline Mode – Play selected games without an internet connection.
+                         <br> Gamification & Rewards System – Achievements, leaderboards, and badges.
+                          <br>Integration with Assistive Technologies – Compatibility with screen readers, eye-tracking, etc.
+                          <br>Therapist & Caregiver Dashboard – Monitor activity and suggest suitable games.
+                          <br>Community & Peer Support – Forums or chat rooms for interaction and sharing.</p>
                       </div>
                     </div>
                     <div
@@ -30801,8 +30807,7 @@
                       <div class="mt-5 hidden" data-landingsite-faq-answer="">
                         <p
                           class="text-left text-sm font-normal leading-[22px] text-[var(--dark-text-color)] md:text-base md:leading-6 lg:leading-[30px]">
-                          Simply <a href="https://app.landingsite.ai/sign-up">sign up</a> for a new account or <a
-                            href="https://app.landingsite.ai/login">log in</a> to access the platform, select your
+                          Simply go the section where you can  select your
                           condition, and explore the personalized game menu created just for you.</p>
                       </div>
                     </div>
@@ -30810,7 +30815,18 @@
                 </div>
               </div>
             </div>
-
+            <script>
+              document.querySelectorAll('[data-landingsite-faq-question]').forEach(button => {
+                button.addEventListener('click', function() {
+                  const answer = this.nextElementSibling;
+                  if (answer.classList.contains('hidden')) {
+                    answer.classList.remove('hidden');
+                  } else {
+                    answer.classList.add('hidden');
+                  }
+                });
+              });
+            </script>
           </section>
 
 

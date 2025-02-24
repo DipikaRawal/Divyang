@@ -30166,53 +30166,68 @@
   </head>
 
   <body class="h-full bg-white">
+    
+
+
+
+
+
+
     <div class="frame-root">
       <div class="frame-content"></div>
       <div class="frame-content">
         <div class="[font-family:var(--font-family-body)]">
           <div>
-          
             <header class="relative z-50 w-full bg-[#F5F8FF] py-6 md:py-5 lg:py-8 code-section" id="sta0w6q">
               <div class="mx-auto w-full max-w-[1206px] px-[18px]">
                 <div class="flex items-center justify-between">
-                  <a
-                    class="text-xl font-semibold text-[var(--primary-color)] [font-family:var(--font-family-heading)] sm:text-3xl">
+                  <a class="text-xl font-semibold text-[var(--primary-color)] [font-family:var(--font-family-heading)] sm:text-3xl">
                     <span class="">Divyang</span>
                   </a>
+                  <!-- Mobile Menu Button -->
                   <button id="mobile-menu-button" data-collapse-toggle="navigation-menu" type="button"
                     class="flex items-center justify-center lg:hidden" aria-controls="navigation-menu"
                     aria-expanded="false" aria-label="Navigation Menu">
                     <i class="fa-regular fa-bars" data-fontawesome-icon="fa-bars" data-landingsite-gallery-type="icon"
                       aria-hidden="true"></i>
                   </button>
+                  <!-- Navigation Menu -->
                   <div id="navigation-menu"
                     class="absolute left-0 top-full z-50 hidden w-full flex-1 bg-[#F5F8FF] pb-4 lg:static lg:mt-0 lg:flex lg:items-center lg:justify-between lg:bg-transparent lg:pb-0">
-                    <ul
-                      class="flex flex-1 flex-col lg:flex-row lg:items-center lg:justify-center lg:space-x-6 lg:px-12">
-
-                     
-
-
-                      <!-- About Us as a Regular Link -->
-                      <li
-                        class="flex items-center border-t border-[var(--light-border-color)] px-2 py-4 lg:border-t-transparent lg:p-0 ml-auto">
+                    <ul class="flex flex-1 flex-col lg:flex-row lg:items-center lg:justify-center lg:space-x-6 lg:px-12">
+                      <!-- About Us Link -->
+                      <li class="flex items-center border-t border-[var(--light-border-color)] px-2 py-4 lg:border-t-transparent lg:p-0 ml-auto">
                         <a href="./about/about.html"
                           class="flex items-center justify-center text-sm font-normal leading-none text-[var(--dark-text-color)] hover:text-[var(--primary-color)] lg:text-base">About
                         </a>
                       </li>
+                      <!-- Contact Us Link -->
+                      <li class="flex items-center border-t border-[var(--light-border-color)] px-2 py-4 lg:border-t-transparent lg:p-0 ml-auto">
+                        <a href="./contact/contact.html"
+                          class="flex items-center justify-center text-sm font-normal leading-none text-[var(--dark-text-color)] hover:text-[var(--primary-color)] lg:text-base">Contact Us
+                        </a>
+                      </li>
                     </ul>
-                    <li
-                    class="flex items-center border-t border-[var(--light-border-color)] px-2 py-4 lg:border-t-transparent lg:p-0 ml-auto">
-                    <a href="./contact/contact.html"
-                      class="flex items-center justify-center text-sm font-normal leading-none text-[var(--dark-text-color)] hover:text-[var(--primary-color)] lg:text-base">Contact Us
-                    </a>
-                  </li>
-                    
                   </div>
                 </div>
               </div>
             </header>
           </div>
+        </div>
+      </div>
+    </div>
+  
+    <!-- JavaScript to Toggle Mobile Menu -->
+    <script>
+      document.getElementById('mobile-menu-button').addEventListener('click', function () {
+        const navigationMenu = document.getElementById('navigation-menu');
+        const isExpanded = this.getAttribute('aria-expanded') === 'true';
+  
+        // Toggle visibility of the navigation menu
+        navigationMenu.classList.toggle('hidden');
+        this.setAttribute('aria-expanded', !isExpanded);
+      });
+    </script>
           <div>
             <section class="relative py-11 pb-8 md:pb-[100px] code-section" id="sibamau">
               <div class="absolute bottom-1.5 right-0 sm:bottom-0 sm:top-0 lg:top-[-116px]">
@@ -30644,21 +30659,46 @@
                           alt="" class="h-[22px] md:h-auto" data-dont-replace=""></span>
                     </span>
                     
-                    <form id="contactForm" class="pr-0 md:pr-14">
+                   
+
+
+                    <form class="pr-0 md:pr-14" data-landingsite-contact-form="">
                       <div class="mb-[50px] flex items-start">
-                        <input type="text" id="name" name="Name" placeholder="Your Name*" required>
+                        <input type="text" name="Name"
+                          class="w-full border-b border-solid border-[rgba(83,83,83,0.3)] p-0 pb-3 text-sm font-normal leading-none text-[rgba(83,83,83,0.6)] shadow-none outline-0 focus:border-[rgba(83,83,83,1)] md:text-base"
+                          placeholder="Your Name*">
                       </div>
                       <div class="mb-[50px] flex items-start">
-                        <input type="email" id="email" name="Email" placeholder="Your Email Address*" required>
+                        <input type="text" name="Email"
+                          class="w-full border-b border-solid border-[rgba(83,83,83,0.3)] p-0 pb-3 text-sm font-normal leading-none text-[rgba(83,83,83,0.6)] shadow-none outline-0 focus:border-[rgba(83,83,83,1)] md:text-base"
+                          placeholder="Your Email Address*">
                       </div>
                       <div class="flex items-start">
-                        <textarea id="message" name="Message" placeholder="Share your message or question*" required></textarea>
+                        <textarea type="text" name="Message"
+                          class="h-[60px] w-full resize-none border-b border-solid border-[rgba(83,83,83,0.3)] p-0 pb-3 text-sm font-normal leading-none text-[rgba(83,83,83,0.6)] shadow-none outline-0 focus:border-[rgba(83,83,83,1)] md:text-base"
+                          placeholder="Share your message or question*"></textarea>
                       </div>
                       <div class="mt-8 md:mt-11">
-                        <button type="submit">Send a Message</button>
+                        <button type="submit"
+                          class="flex h-[52px] items-center justify-center rounded-full bg-[var(--primary-color)] px-8 text-sm font-medium leading-none text-[var(--light-text-color)] transition-all duration-500 ease-in-out hover:bg-[var(--primary-button-hover-bg-color)] md:h-11 md:text-base lg:h-[52px]">Send
+                          a Message</button>
                       </div>
-                      <p id="responseMessage" style="color: green; margin-top: 10px;"></p>
+                      <!-- Success message container -->
+                      <div id="success-message" class="mt-4 text-green-600 text-sm hidden">Message sent successfully!</div>
                     </form>
+                    
+                    <script>
+                      document.querySelector('form[data-landingsite-contact-form]').addEventListener('submit', function(event) {
+                        event.preventDefault(); // Prevent the form from submitting
+                    
+                        // Display the success message
+                        const successMessage = document.getElementById('success-message');
+                        successMessage.classList.remove('hidden');
+                    
+                        // Optionally, you can clear the form fields after submission
+                        event.target.reset();
+                      });
+                    </script>
                     
 
 

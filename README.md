@@ -52,7 +52,21 @@ While Divyang is designed to be mobile-friendly, some games require a keyboard a
 
 🔹 Desktop-Only Games - Advanced problem-solving, multi-step challenges, and games requiring detailed control.
 
+
+
+🚀 Project Demo
+🔗 Live Demo: [https://divyang.vercel.app/]
+📖 How to Use:
+1️⃣ Clone the repository:     git clone <repository-url>
+
+2️⃣ Install dependencies:     npm install
+
+3️⃣ Start the project:        npm start
+
+
 ---
+
+
 
 ## 🛠️ Contributing
 We welcome contributors! To get involved:  
@@ -77,6 +91,10 @@ Akshita Kumari: https://www.linkedin.com/in/akshitakumari317/
 
 🐙 **GitHub Issues:** Report bugs & suggestions  
 📱 **Follow us on Social Media** - Stay updated!  
+
+---
+
+📜 Documentation: The repository includes all source code, setup instructions, and detailed documentation for better understanding.
 
 🌟 _Empowering neurodiverse minds through play!_ 🌟
 

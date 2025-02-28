@@ -37,12 +37,14 @@ Divyang is an inclusive platform designed to empower individuals with ADHD, Dysl
 Divyang leverages technology to create a meaningful impact on neurodiverse individuals by providing an engaging and structured learning environment. By integrating cognitive skill-building exercises with interactive gameplay, the platform fosters personal development and enhances daily life skills.
 
 🔹 **Bridging the gap between education and entertainment**
+
 🔹 **Encouraging skill development in a fun, stress-free way**
+
 🔹 **Making technology accessible for neurodiverse individuals**
 
 ---
 
-📱 Mobile vs Desktop Experience
+🎮 Mobile vs. Desktop Games
 
 While Divyang is designed to be mobile-friendly, some games require a keyboard and a larger screen for the best experience. We recommend using a desktop for optimal gameplay in certain activities that involve complex interactions or multitasking.
 
@@ -61,10 +63,6 @@ Let's build something impactful together! 💡
 
 ---
 
-## 📜 License
-Licensed under the **MIT License** - free to use, modify, and distribute.
-
----
 
 🤝 Contributors
 Dipika Rawal: https://www.linkedin.com/in/dipikarawal30/

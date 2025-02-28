@@ -49,6 +49,7 @@ Divyang leverages technology to create a meaningful impact on neurodiverse indiv
 While Divyang is designed to be mobile-friendly, some games require a keyboard and a larger screen for the best experience. We recommend using a desktop for optimal gameplay in certain activities that involve complex interactions or multitasking.
 
 🔹 Mobile-Friendly Games - Simple touch-based interactions, memory games, and focus-based exercises.
+
 🔹 Desktop-Only Games - Advanced problem-solving, multi-step challenges, and games requiring detailed control.
 
 ---
@@ -65,6 +66,7 @@ Let's build something impactful together! 💡
 
 
 🤝 Contributors
+
 Dipika Rawal: https://www.linkedin.com/in/dipikarawal30/
 
 Akshita Kumari: https://www.linkedin.com/in/akshitakumari317/

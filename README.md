@@ -28,6 +28,7 @@ Divyang is an inclusive platform designed to empower individuals with ADHD, Dysl
 
 ## 🚀 Get Started in 2 Easy Steps!
 1️⃣ **Choose Your Focus** - Select ADHD, Dyslexia, Alzheimer’s, or Autism for customized games.
+
 2️⃣   **Start Playing!** - Enhance cognitive skills while having fun.   
 
 ---
@@ -40,6 +41,7 @@ Divyang leverages technology to create a meaningful impact on neurodiverse indiv
 🔹 **Making technology accessible for neurodiverse individuals**
 
 ---
+
 📱 Mobile vs Desktop Experience
 
 While Divyang is designed to be mobile-friendly, some games require a keyboard and a larger screen for the best experience. We recommend using a desktop for optimal gameplay in certain activities that involve complex interactions or multitasking.

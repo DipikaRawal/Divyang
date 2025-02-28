@@ -5,6 +5,36 @@ Divyang is an inclusive platform designed to empower individuals with ADHD, Dysl
 
 ---
 
+## 🏆 Problem Statement & Approach
+
+Many neurodiverse individuals, including those with ADHD, Dyslexia, Alzheimer’s, and Autism, struggle with focus, cognitive skills, and confidence-building. While numerous gaming platforms exist, they often come with overwhelming animations, complex interactions, and unnecessary distractions.
+
+---
+
+ ## 🛠 Why Simplicity Matters?
+
+Divyang is designed to be simple and easy to use—avoiding excessive animations or highly reactive elements. Many neurodivergent individuals find fast transitions, flashing effects, or too many interactions overwhelming. To ensure a stress-free and confidence-building experience, the platform focuses on:
+
+✅ Minimalist design – Clean UI with easy navigation.
+
+✅ Low sensory load – No distracting animations, only essential transitions.
+
+✅ Progressive learning – Encouraging users at their own pace without pressure.
+
+---
+
+## 🎯 What Makes Divyang Different?
+
+While various gaming platforms offer entertainment, Divyang is purpose-built to create a safe, accessible, and structured environment for cognitive skill development:
+
+🔹 Not just games—personalized learning tailored for neurodiverse needs.
+
+🔹 Confidence-building approach—starting with simple tasks and gradually increasing complexity.
+
+🔹 Community-driven support—helping users stay motivated and connected.
+
+---
+
 ## 🎯 Key Features
 ✅ **Engaging Learning** - Fun and interactive games designed to improve focus, memory, and problem-solving.  
 ✅ **Personalized Experience** - Tailored content based on individual needs.  
@@ -44,7 +74,7 @@ Divyang leverages technology to create a meaningful impact on neurodiverse indiv
 
 ---
 
-🎮 Mobile vs. Desktop Games
+## 🎮 Mobile vs. Desktop Games
 
 While Divyang is designed to be mobile-friendly, some games require a keyboard and a larger screen for the best experience. We recommend using a desktop for optimal gameplay in certain activities that involve complex interactions or multitasking.
 
@@ -54,11 +84,12 @@ While Divyang is designed to be mobile-friendly, some games require a keyboard a
 
 ---
 
-🚀 Project Demo
 
-🔗 Live Demo: [https://divyang.vercel.app/]
+## 🔗 Live Demo: [https://divyang.vercel.app/]
 
-📖 How to Use:
+---
+
+## 📖 How to Use:
 
 1️⃣ Clone the repository:     git clone <repository-url>
 
@@ -84,7 +115,7 @@ Let's build something impactful together! 💡
 ---
 
 
-🤝 Contributors
+## 🤝 Contributors
 
 Dipika Rawal: https://www.linkedin.com/in/dipikarawal30/
 

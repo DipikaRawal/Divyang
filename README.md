@@ -13,7 +13,7 @@ Many neurodiverse individuals, including those with ADHD, Dyslexia, Alzheimer’
 
  ## 🛠 Why Simplicity Matters?
 
-Divyang is designed to be simple and easy to use—avoiding excessive animations or highly reactive elements. Many neurodivergent individuals find fast transitions, flashing effects, or too many interactions overwhelming. To ensure a stress-free and confidence-building experience, the platform focuses on:
+Divyang is designed to be simple and easy to use—avoiding excessive animations or highly reactive elements or any advertisements. Many neurodivergent individuals find fast transitions, flashing effects, or too many interactions overwhelming. To ensure a stress-free and confidence-building experience, the platform focuses on:
 
 ✅ Minimalist design – Clean UI with easy navigation.
 
